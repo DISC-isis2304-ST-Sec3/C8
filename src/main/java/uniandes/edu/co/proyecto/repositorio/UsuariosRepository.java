@@ -28,8 +28,8 @@ public interface UsuariosRepository extends JpaRepository<Usuarios, Integer> {
     
     @Modifying
     @Transactional
-    @Query(value = "UPDATE Usuarios SET TiposUsuario_tipo = :tipo_user, nombre = :nombre, correo = :correo Where tipo_documento = :tipo_documento AND num_documento = :num_documento)", nativeQuery = true )
-    void actualizarUsuario(@Param("tipo_documento") String tipo_documento, @Param("num_documento") Long num_documento,@Param("nombre") String nombre, @Param("correo") String correo, @Param("tipo_user") String TiposUsuario_tipo);
+    @Query(value = "UPDATE Usuarios SET TiposUsuario_tipo = :tipo_user WHERE tipo_documento = :tipo_documento AND num_documento = :num_documento)", nativeQuery = true )
+    void actualizarUsuario(@Param("tipo_documento") String tipo_documento, @Param("num_documento") Long num_documento, @Param("tipo_user") String TiposUsuario_tipo);
     
     
     @Modifying
