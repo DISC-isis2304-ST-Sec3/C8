@@ -14,7 +14,7 @@ public class Usuarios {
     private UsuariosPK pk;
 
     @ManyToOne
-    @JoinColumn(name = "TiposUsuario_tipo", referencedColumnName = "tipo")
+    @JoinColumn(name = "TIPOSUSUARIO_TIPO", referencedColumnName = "tipo")
     private TiposUsuario TiposUsuario_tipo;
 
     public Usuarios(String tipo_documento, Long num_documento, String nombre, String correo,
@@ -26,5 +26,23 @@ public class Usuarios {
     public Usuarios() {
         ;
     }
+
+    public UsuariosPK getPk() {
+        return pk;
+    }
+
+    public void setPk(UsuariosPK pk) {
+        this.pk = pk;
+    }
+
+    public TiposUsuario getTiposUsuario_tipo() {
+        return TiposUsuario_tipo;
+    }
+
+    public void setTiposUsuario_tipo(TiposUsuario tiposUsuario_tipo) {
+        TiposUsuario_tipo = tiposUsuario_tipo;
+    }
+
+    
 
 }
