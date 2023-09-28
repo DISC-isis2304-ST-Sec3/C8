@@ -5,17 +5,17 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "reservas")
+@Table(name = "tiposHabitacion")
 public class TiposHabitacion {
 
     @Id
     private String tipo;
 
-    private char jacuzzi;
-    private char comedor;
-    private char cocina;
+    private int jacuzzi;
+    private int comedor;
+    private int cocina;
     
-    public TiposHabitacion(String tipo, char jacuzzi, char comedor, char cocina) {
+    public TiposHabitacion(String tipo, int jacuzzi, int comedor, int cocina) {
         this.tipo = tipo;
         this.jacuzzi = jacuzzi;
         this.comedor = comedor;
@@ -34,27 +34,27 @@ public class TiposHabitacion {
         this.tipo = tipo;
     }
 
-    public char getJacuzzi() {
+    public int getJacuzzi() {
         return jacuzzi;
     }
 
-    public void setJacuzzi(char jacuzzi) {
+    public void setJacuzzi(int jacuzzi) {
         this.jacuzzi = jacuzzi;
     }
 
-    public char getComedor() {
+    public int getComedor() {
         return comedor;
     }
 
-    public void setComedor(char comedor) {
+    public void setComedor(int comedor) {
         this.comedor = comedor;
     }
 
-    public char getCocina() {
+    public int getCocina() {
         return cocina;
     }
 
-    public void setCocina(char cocina) {
+    public void setCocina(int cocina) {
         this.cocina = cocina;
     }
 
