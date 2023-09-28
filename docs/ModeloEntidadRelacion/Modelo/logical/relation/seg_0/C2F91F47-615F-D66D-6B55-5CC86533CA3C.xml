@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Consumos" directorySegmentName="seg_0" id="C2F91F47-615F-D66D-6B55-5CC86533CA3C">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 22:03:42 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>787389DF-1694-5501-C200-369555E9C414</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>3613204E-A14F-83B0-1DEB-B3D7746A172C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="descripcion" id="C698A1B7-3AC4-6922-A9B6-B77406F700E7">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 22:04:27 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>510</dataTypeSize>
+<defaultValue>&quot;&quot;</defaultValue>
+<ownDataTypeParameters>510,,</ownDataTypeParameters>
+</attribute>
+<attribute name="costo" id="51357227-EB94-2464-BB74-969519CC0532">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 22:05:35 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

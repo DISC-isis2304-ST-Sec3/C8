@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="80522591-D39A-4C76-9131-6E10DB5DDAF6" name="Sirven_res">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Restaurantes_id" id="F61580E2-08CA-A11B-A04B-8454488D59A6">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2CE239C8-755F-1C73-DC71-1292843619C8" referredColumn="7AA96887-27F6-3F31-B274-C5EA08DA472D"/>
+</associations>
+</Column>
+<Column name="ProductosRestaurante_id" id="B41EA8B1-363A-E471-B9F7-2FF61675C81F">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="76736362-A2A3-4146-F994-DC4BB95B7A97" referredColumn="2B855FBA-6EF3-8721-EBD2-D795B8061222"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D37A8A3B-425E-57FB-AEC6-E5C1216742B9" name="Sirven_res_PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F61580E2-08CA-A11B-A04B-8454488D59A6"/>
+<colUsage columnID="B41EA8B1-363A-E471-B9F7-2FF61675C81F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AD3411C3-16E2-7665-9B60-D0A68EA979CC" name="Sirven_res_Restaurantes_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>63C8E1CD-3F2E-53AD-4359-A63A26736B83</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F61580E2-08CA-A11B-A04B-8454488D59A6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B7774ABA-E41D-A7B7-6DB7-087FB0D60E76" name="Sirven_res_ProductosRestaurante_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>63C8E1CD-3F2E-53AD-4359-A63A26736B83</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B41EA8B1-363A-E471-B9F7-2FF61675C81F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

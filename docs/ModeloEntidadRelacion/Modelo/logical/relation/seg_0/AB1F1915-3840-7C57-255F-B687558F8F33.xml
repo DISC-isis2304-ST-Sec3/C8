@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Sirven_bar" directorySegmentName="seg_0" id="AB1F1915-3840-7C57-255F-B687558F8F33">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 03:34:49 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>D9DA86C7-F776-BFF8-E7A6-9BF9E53A8325</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>4A48A3B6-D086-BCC1-1118-25F4ADBDB82C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2AA243CD-1A8D-457F-28CB-3AD3CB695E38" name="TiposServicio">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>3613204E-A14F-83B0-1DEB-B3D7746A172C</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="tipo" id="56212C40-C77F-DF72-CD68-35418810E2A7">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>7E863D2E-0EB4-C5D0-979B-4A43F3D957E2</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<constraintName>CK_tipo_servicio</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="bar" description=""/>
+<valueDef value="gimnasio" description=""/>
+<valueDef value="internet" description=""/>
+<valueDef value="lavadoSecadoEmbolado" description=""/>
+<valueDef value="piscina" description=""/>
+<valueDef value="prestamo" description=""/>
+<valueDef value="restaurante" description=""/>
+<valueDef value="salon" description=""/>
+<valueDef value="spa" description=""/>
+<valueDef value="supermercado" description=""/>
+<valueDef value="tienda" description=""/>
+</listOfValues>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="EF2D2468-49C1-D8EB-515F-FCCD1622057D">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>E364BD05-6AD8-6C74-215F-986583C6CA8C</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>510</dataTypeSize>
+<ownDataTypeParameters>510,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4E023B6C-2B9B-AA07-6F18-68EE5BF4BCE3" name="TiposServicio_PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>19189129-AA67-932B-55BF-87AEE3A038FF</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="56212C40-C77F-DF72-CD68-35418810E2A7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PrestanAdicional" directorySegmentName="seg_0" id="D78A9EDD-05C9-23CB-DE0D-05ED38AA1EF5">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 04:16:54 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>1741A557-2C9F-AD95-C382-F0DC8EAB954D</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>0E85CE6B-23A8-61A5-A08F-AF6595DF9C52</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="costo" id="01FCF5CC-7558-A22E-EB1B-10056307AC0F">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 04:17:32 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

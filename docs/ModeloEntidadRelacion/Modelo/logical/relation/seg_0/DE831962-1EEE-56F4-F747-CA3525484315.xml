@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="CheckOuts" directorySegmentName="seg_0" id="DE831962-1EEE-56F4-F747-CA3525484315">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-21 15:37:21 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>8EBC0F20-545E-ED12-47C4-74323D16702C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>787389DF-1694-5501-C200-369555E9C414</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="fecha_salida" id="650016E8-49F9-AA6D-0D35-C073A2FEBDCD">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-21 15:37:30 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

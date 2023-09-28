@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BEDAA255-BD5B-6C7E-2166-0D033E7CC80C" name="PrestanAdicional">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SalonesReunion_id" id="C7C8F4C4-0976-6D12-B0C7-78ABD51B11C0">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CC5B109D-FC92-BF6D-7ABD-16B2FFBD31A6" referredColumn="B354A8C4-EE9D-4A46-8354-89B46AFC61E6"/>
+</associations>
+</Column>
+<Column name="Equipos_id" id="E4A98081-04D0-39CC-7665-EE67BA6D36EA">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="33FB86D1-FB17-3650-609C-9E33E5547E4C" referredColumn="D952FA42-AA24-028D-95FF-B108BBE24457"/>
+</associations>
+</Column>
+<Column name="costo" id="60BF4A6A-4D75-F246-B83C-B0ED44B6D9C3">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>01FCF5CC-7558-A22E-EB1B-10056307AC0F</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7A5E9CD5-5988-D2B9-6EB6-CAC1F1C6D79D" name="PrestanAdicional_PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C7C8F4C4-0976-6D12-B0C7-78ABD51B11C0"/>
+<colUsage columnID="E4A98081-04D0-39CC-7665-EE67BA6D36EA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="19411A66-8282-7894-7217-CBC3A393E2E3" name="PrestanAdicional_SalonesReunion_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>D78A9EDD-05C9-23CB-DE0D-05ED38AA1EF5</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C7C8F4C4-0976-6D12-B0C7-78ABD51B11C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="39CADB0F-0873-E913-BB88-5C4F8E335626" name="PrestanAdicional_Equipos_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>D78A9EDD-05C9-23CB-DE0D-05ED38AA1EF5</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E4A98081-04D0-39CC-7665-EE67BA6D36EA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

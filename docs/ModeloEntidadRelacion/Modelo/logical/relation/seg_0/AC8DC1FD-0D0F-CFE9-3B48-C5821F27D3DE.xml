@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="salonReunion" directorySegmentName="seg_0" id="AC8DC1FD-0D0F-CFE9-3B48-C5821F27D3DE">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 04:36:00 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<sourcePk>19189129-AA67-932B-55BF-87AEE3A038FF</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>3613204E-A14F-83B0-1DEB-B3D7746A172C</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>1741A557-2C9F-AD95-C382-F0DC8EAB954D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

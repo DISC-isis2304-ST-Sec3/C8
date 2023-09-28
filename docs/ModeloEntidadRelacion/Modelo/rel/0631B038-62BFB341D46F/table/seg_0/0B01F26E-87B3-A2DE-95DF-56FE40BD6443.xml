@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0B01F26E-87B3-A2DE-95DF-56FE40BD6443" name="VendenSuper">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Supermercados_id" id="3DEED0C1-23B0-EF9E-53AA-64B65A77B218">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3D70AF70-0AF1-2A55-AD9D-E3FAD39FC709" referredColumn="B2849855-2FA9-D20B-4ECC-C4C4A20AA271"/>
+</associations>
+</Column>
+<Column name="ProductosSuper_id" id="BA7ED972-8428-021C-457C-485696E8CB01">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9BD0E43B-0B7E-B462-A5CB-AD998D7025C5" referredColumn="CA29714F-2CE4-B5BF-B886-D03555A5C30F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="39F274FB-CF94-CA1B-DB2E-63A43FD1411E" name="VendenSuper_PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3DEED0C1-23B0-EF9E-53AA-64B65A77B218"/>
+<colUsage columnID="BA7ED972-8428-021C-457C-485696E8CB01"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CC883EAD-4B08-9C8F-4A1C-13964BF4B1CC" name="VendenSuper_Supermercados_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>0AD0727A-B242-C43D-7231-66E26896035B</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3DEED0C1-23B0-EF9E-53AA-64B65A77B218"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="975BAFCD-E497-B8D7-B343-FFFD49B5AB3B" name="VendenSuper_ProductosSuper_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>0AD0727A-B242-C43D-7231-66E26896035B</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BA7ED972-8428-021C-457C-485696E8CB01"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
