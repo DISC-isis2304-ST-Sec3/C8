@@ -3,25 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tipos Usuario</title>
+    <title>Tipos Habitacion</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
 </head>
 <body>
     <div>
-        <h1>Lista de tipos de usuario</h1>
+        <h1>Lista de tipos de habitación</h1>
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
                 <tr>
                     <th>Tipo</th>
+                    <th>Jacuzzi</th>
+                    <th>Cocina</th>
+                    <th>Comedor</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <th:block th:each="tiposUsuario : ${tiposUsuario}">
+                <th:block th:each="tiposHabitacion : ${tiposHabitacion}">
                     <tr>
-                        <td th:text="${tiposUsuario.tipo}"></td>
+                        <td th:text="${tiposHabitacion.tipo}"></td>
+                        <td th:text="${tiposHabitacion.jacuzzi}"></td>
+                        <td th:text="${tiposHabitacion.cocina}"></td>
+                        <td th:text="${tiposHabitacion.comedor}"></td>
                         <td>
-                            <a th:href="@{'/tiposUsuario/' + ${tiposUsuario.tipo} + '/delete'}"
+                            <a th:href="@{'/tiposHabitacion/' + ${tiposHabitacion.tipo} +  '/edit'}"
+                               >Editar</a>
+                            <a th:href="@{'/tiposHabitacion/' + ${tiposHabitacion.tipo} + '/delete'}"
                                onclick="return confirm('¿Está seguro de borrar el tipo?')">Eliminar</a>
                         </td>
                     </tr>
@@ -29,8 +37,7 @@
             </tbody>
         </table>
         <a th:href="@{/}" class="btn btn-primary">Volver</a>
-        <a th:href="@{tiposUsuario/new}" class = "btn btn-primary">Añadir tipo de usuario</a>
+        <a th:href="@{tiposHabitacion/new}" class = "btn btn-primary">Añadir tipo de habitación</a>
     </div>
 </body>
 </html>
-

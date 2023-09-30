@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear tipos de habitación</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <br>
+    <div class="container border border-2 w-70">    
+
+    <h1 class="text">Editar tipo de habitación</h1>
+
+    <form th:action="@{'/tiposHabitacion/' + ${tipoHabitacion.tipo} +  '/edit/save'}" method="post">
+        
+        <label class="col-form-label" for="jacuzzi">Seleccione qué va cambiar de la habitación</label><br><br>
+        <div class="form-group text-center">
+
+            <input type="checkbox" id="jacuzzi" name="jacuzzi" value="1"> Jacuzzi &nbsp; &nbsp; &nbsp;
+            
+            <input type="checkbox" id="cocina" name="cocina" value="1"> Cocina integrada &nbsp; &nbsp; &nbsp;
+            
+            <input type="checkbox" id="comedor" name="comedor" value="1"> Comedor integrado
+
+        </div>
+
+        <br>
+        <div class="text-center">
+        <input type="submit" value="Guardar cambios" class="btn btn-primary">
+        <a th:href="@{/tiposHabitacion}" class="btn btn-primary">Cancelar</a>
+        </div>
+    </br>
+    </form>
+    </div>
+</body>
+</html>

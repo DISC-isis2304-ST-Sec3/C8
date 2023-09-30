@@ -17,7 +17,7 @@ public class Habitaciones {
     private double costo;
 
     @ManyToOne
-    @JoinColumn(name = "TiposHabitacion_tipo", referencedColumnName = "tipo")
+    @JoinColumn(name = "TIPOSHABITACION_TIPO", referencedColumnName = "tipo")
     private TiposHabitacion TiposHabitacion_tipo;
 
     public Habitaciones() {
