@@ -15,6 +15,9 @@ public interface TiposUsuarioRepository extends JpaRepository<TiposUsuario, Inte
     @Query(value = "SELECT * FROM TiposUsuario", nativeQuery = true )
     Collection<TiposUsuario> darTiposUsuario();
     
+    @Query(value = "SELECT * FROM TiposUsuario WHERE tipo = :tipo ", nativeQuery = true )
+    TiposUsuario darTipoUsuario(@Param("tipo") String tipo);
+    
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO TiposUsuario (tipo) VALUES (:tipo)", nativeQuery = true )

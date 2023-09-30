@@ -24,12 +24,13 @@ public interface UsuariosRepository extends JpaRepository<Usuarios, String> {
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO Usuarios (tipo_documento, num_documento, nombre, correo, TiposUsuario_tipo) VALUES (:tipo_documento , :num_documento , :nombre , :correo , :tipo_user) ", nativeQuery = true )
-    void insertarUsuario(@Param("tipo_documento") String tipo_documento, @Param("num_documento") Long num_documento,@Param("nombre") String nombre, @Param("correo") String correo, @Param("tipo_user") String TiposUsuario_tipo);
+    void insertarUsuario(@Param("tipo_documento") String tipo_documento, @Param("num_documento") Long num_documento,@Param("nombre") String nombre, @Param("correo") String correo, @Param("tipo_user") String tipoUsuario);
     
     @Modifying
     @Transactional
-    @Query(value = "UPDATE Usuarios SET TiposUsuario_tipo = :tipo_user WHERE tipo_documento = :tipo_documento AND num_documento = :num_documento ) ", nativeQuery = true )
-    void actualizarUsuario(@Param("tipo_documento") String tipo_documento, @Param("num_documento") Long num_documento, @Param("tipo_user") String TiposUsuario_tipo);
+    @Query(value = "UPDATE Usuarios SET TiposUsuario_tipo = :tipoUser WHERE tipo_documento = :tipoDocumento AND num_documento = :numDocumento", nativeQuery = true)
+    void actualizarUsuario(@Param("tipoDocumento") String tipo_documento, @Param("numDocumento") Long num_documento, @Param("tipoUser") String tipoUsuario);
+    
     
     
     @Modifying

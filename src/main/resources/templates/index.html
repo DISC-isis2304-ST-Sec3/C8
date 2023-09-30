@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Hotel de los Andes</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' th:href = "@{/css/bootstrap.min.css}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <style>
+        .custom-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
-    <div class = "container mx-auto w-25">
-        <h1>hotel de los Andes</h1>
-        <!-- <img src="@{/images/logo.png}" width = "250"> -->
-        <div>
-            <a th:href="@{/tiposUsuario}" class="btn btn-primary">Tipos usuario</a>
+    <div class="container custom-container">
+        <h1>Hotel de los Andes</h1>
+        <h3>Bienvenidos!</h3>
+        <img th:src="@{/images/A.png}" width="350" alt="logo">
+        <div class="mt-4">
+            <a th:href="@{/tiposUsuario}" class="btn btn-primary btn-block mb-2">Tipos usuario</a>
+            <a th:href="@{/usuarios}" class="btn btn-primary btn-block">Usuarios</a>
         </div>
     </div>
 </body>
 </html>
+

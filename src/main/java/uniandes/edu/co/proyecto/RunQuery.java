@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 
-import uniandes.edu.co.proyecto.modelo.TiposUsuario;
-import uniandes.edu.co.proyecto.repositorio.TiposUsuarioRepository;
+import uniandes.edu.co.proyecto.modelo.Usuarios;
+import uniandes.edu.co.proyecto.repositorio.UsuariosRepository;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 // TODO ELIMINAR ESTO
@@ -15,7 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class RunQuery implements CommandLineRunner {
 
 	@Autowired
-	private TiposUsuarioRepository repo;
+	private UsuariosRepository repo;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoApplication.class, args);
@@ -24,10 +24,10 @@ public class RunQuery implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Collection<TiposUsuario> tu = repo.darTiposUsuario();
+		Collection<Usuarios> tu = repo.darUsuarios();
 
-		for (TiposUsuario i : tu) {
-			System.out.println(i);
+		for (Usuarios i : tu) {
+			System.out.println(i.getPk().getNombre());
 		}
 
 	}
