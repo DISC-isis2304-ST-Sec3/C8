@@ -36,7 +36,7 @@ public class TiposUsuarioController {
     }
     
     @GetMapping("/tiposUsuario/{tipo}/delete")
-    public String barEliminar(@PathVariable("tipo") String tipo) {
+    public String tiposUsuarioEliminar(@PathVariable("tipo") String tipo) {
         tiposUsuarioRepository.eliminarTipoUsuario(tipo);
         return "redirect:/tiposUsuario";
     }
