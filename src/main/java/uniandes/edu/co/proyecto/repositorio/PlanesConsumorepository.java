@@ -18,6 +18,9 @@ public interface PlanesConsumorepository extends JpaRepository<PlanesConsumo, In
     @Query(value = "SELECT * FROM PlanesConsumo WHERE id = :id ", nativeQuery = true )
     PlanesConsumo darPlanConsumo(@Param("id") int id);
     
+    @Query(value = "SELECT id FROM PlanesConsumo WHERE nombre = :name AND ROWNUM <= 1 ", nativeQuery = true )
+    PlanesConsumo darIdPlanConsumo(@Param("name") String name);
+    
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO PlanesConsumo (nombre, estadia_min, costo, desc_reserva, desc_bar, desc_restaurante, desc_servicio) " +

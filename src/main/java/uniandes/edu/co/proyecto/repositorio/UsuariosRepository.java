@@ -18,7 +18,7 @@ public interface UsuariosRepository extends JpaRepository<Usuarios, String> {
     @Query(value = "SELECT * FROM Usuarios WHERE tipo_documento = :tipoDoc AND num_documento = :numDoc AND nombre = :nombre AND correo = :correo ", nativeQuery = true )
     Usuarios darUsuario(@Param("tipoDoc") String tipoDoc, @Param("numDoc") Long numDoc, @Param("nombre") String nombre, @Param("correo") String correo);
     
-    @Query(value = "SELECT * FROM Usuarios WHERE tipo_documento = :tipoDoc AND num_documento = :numDoc ;", nativeQuery = true )
+    @Query(value = "SELECT * FROM Usuarios WHERE tipo_documento = :tipoDoc AND num_documento = :numDoc ", nativeQuery = true )
     Usuarios darUsuarioPorNumDocumento(@Param("tipoDoc") String tipoDoc, @Param("numDoc") Long numDoc);
     
     @Modifying

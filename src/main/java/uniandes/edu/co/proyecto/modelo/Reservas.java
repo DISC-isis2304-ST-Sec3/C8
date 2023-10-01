@@ -29,7 +29,7 @@ public class Reservas {
     private Usuarios usuariosPK;
 
     @ManyToOne
-    @JoinColumn(name = "PlanesConsumo_id", referencedColumnName = "id")
+    @JoinColumn(name = "PLANESCONSUMO_ID", referencedColumnName = "id")
     private PlanesConsumo PlanesConsumo_id;
 
     public Reservas(int id, Date fecha_inicio, Date fecha_salida, int num_personas, Usuarios usuariosPK,
