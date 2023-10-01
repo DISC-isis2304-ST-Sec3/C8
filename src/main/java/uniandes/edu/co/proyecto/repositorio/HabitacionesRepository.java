@@ -24,6 +24,12 @@ public interface HabitacionesRepository extends JpaRepository<Habitaciones, Inte
     @Query(value = "INSERT INTO habitaciones (id, capacidad, costo, tiposHabitacion_tipo) VALUES ( :id , :capacidad , :costo , :tiposHabitacion )", nativeQuery = true )
     void insertarHabitacion(@Param("id") int id, @Param("capacidad") int capacidad, @Param("costo") double costo, @Param("tiposHabitacion") String tiposHabitacion);
     
+    
+    @Modifying
+    @Transactional
+    @Query(value = "INSERT INTO habitaciones (capacidad, costo, tiposHabitacion_tipo) VALUES ( :capacidad , :costo , :tiposHabitacion )", nativeQuery = true )
+    void insertarHabitacion2(@Param("capacidad") int capacidad, @Param("costo") double costo, @Param("tiposHabitacion") String tiposHabitacion);
+    
     @Modifying
     @Transactional 
     @Query(value = "DELETE FROM Habitaciones WHERE id = :id ", nativeQuery = true )

@@ -49,6 +49,11 @@ public class PlanesConsumoController {
         return "redirect:/planesConsumo";
     }
     
-    // TODO UPDATE
+    @GetMapping("/planesConsumo/{id}/edit")
+    public String planesConsumoEditar(@PathVariable("id") int id, Model model) {
+        planesConsumoRepository.eliminarPlanConsumo(id);
+        model.addAttribute("planesConsumo", new PlanesConsumo());
+        return "planesConsumoNuevo";
+    }
     
 }

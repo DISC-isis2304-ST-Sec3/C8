@@ -15,7 +15,7 @@
     <form th:action="@{/habitaciones/new/save}" method="post">
         
         <label class="col-form-label" for="id">Número de la habitación</label>
-        <input class="form-control" type="text" id="id" name="id" required><br>
+        <input class="form-control" type="number" id="id" name="id" value = 0 ><br>
         
         <label class="col-form-label" for="capacidad">Capacidad de la habitación</label>
         <input class="form-control" type="numeric" id="capacidad" name="capacidad" required><br>

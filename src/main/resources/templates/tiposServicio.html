@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos servicio</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div>
+        <h1>Lista de tipos de servicio</h1>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Tipo de servicio</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="tipoServicio : ${tiposServicio}">
+                    <tr>
+                        <td th:text="${tipoServicio.tipo}"></td>
+                        <td th:text="${tipoServicio.descripcion}"></td>
+                        <td>
+                            <a th:href="@{'/tiposServicio/' + ${tipoServicio.tipo} +  '/new'}"
+                               >Nueva descripción</a><br>
+                            <a th:href="@{'/tiposServicio/' + ${tipoServicio.tipo} +  '/edit'}"
+                               >Editar descripción</a><br>
+                            <a th:href="@{'/tiposServicio/' + ${tipoServicio.tipo} + '/delete'}"
+                               onclick="return confirm('¿Está seguro de borrar la descripción?')"
+                               >Eliminar descripción</a>
+                        </td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
+        <a th:href="@{/}" class="btn btn-primary">Volver</a>
+    </div>
+</body>
+</html>

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import uniandes.edu.co.proyecto.modelo.Habitaciones;
 import uniandes.edu.co.proyecto.repositorio.TiposHabitacionRepository;
@@ -36,30 +37,23 @@ public class HabitacionesController {
 
     
     @PostMapping("/habitaciones/new/save")
-    public String habitacionesGuardar(@ModelAttribute("id") int id,
+    public String habitacionesGuardar(@RequestParam(value = "id") int id,
     @ModelAttribute("capacidad") int capacidad, @ModelAttribute("costo") double costo,
     @ModelAttribute("tipoHabitacion") String tipoHabitacion) {
-        habitacionesRepository.insertarHabitacion(id, capacidad, costo, tipoHabitacion);
+        if (id == 0) {
+            habitacionesRepository.insertarHabitacion2(capacidad, costo, tipoHabitacion);
+        } else {
+            habitacionesRepository.insertarHabitacion(id, capacidad, costo, tipoHabitacion);
+        }
         return "redirect:/habitaciones";
     }
     
     @GetMapping("/habitaciones/{id}/edit")
     public String habitacionesEditarForm(@PathVariable("id") int id, Model model) {
-        Habitaciones habitaciones = habitacionesRepository.darHabitacion(id);
-        if (habitaciones != null) {
-            model.addAttribute("habitaciones",habitaciones);
-            return "habitacionesEditar";
-        }
-        else {
-            return "redirect:/habitaciones";
-        }
-    }
-    
-    @GetMapping("/habitaciones/{id}/edit/save")
-    public String habitacionesEditarGuardar(@ModelAttribute("id") int id, @ModelAttribute("capacidad") int capacidad, @ModelAttribute("costo") double costo,
-    @ModelAttribute("tiposHabitacion") String tipoHabitacion){
-        habitacionesRepository.actualizarHabitacion(id, capacidad, costo, tipoHabitacion);
-        return "redirect:/habitaciones";
+        habitacionesRepository.eliminarHabitacion(id);
+        model.addAttribute("habitaciones", new Habitaciones());
+        model.addAttribute("tiposHabitacion", tiposHabitacionRepository.darTiposHabitacion());
+        return "habitacionesNuevo";
     }
   
     @GetMapping("/habitaciones/{id}/delete")

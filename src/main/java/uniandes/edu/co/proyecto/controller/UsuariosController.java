@@ -52,23 +52,11 @@ public class UsuariosController {
     
     @GetMapping("/usuarios/{tipo_documento}/{num_documento}/edit")
     public String usuariosEditarForm(@PathVariable("tipo_documento") String tipoDocumento, @PathVariable("num_documento") Long numDocumento, Model model) {
-        Usuarios usuarios = usuariosRepository.darUsuarioPorNumDocumento(tipoDocumento, numDocumento);
-        if (usuarios != null) {
-            model.addAttribute("usuarios",usuarios);
-            return "usuarioEditar";
-        }
-        else {
-            return "redirect:/usuarios";
-        }
-    }
-    
-    @GetMapping("/usuarios/{tipo_documento}/{num_documento}/edit/save")
-    public String usuarioEditarGuardar(@ModelAttribute Usuarios usuario){
-        String tipoDocumento = usuario.getPk().getTipo_documento();
-        Long numDocumento = usuario.getPk().getNum_documento();
-        TiposUsuario tipoUsuario = usuario.getTiposUsuario_tipo();
-        usuariosRepository.actualizarUsuario(tipoDocumento, numDocumento, tipoUsuario.getTipo());
-        return "redirect:/usuarios";
+        usuariosRepository.eliminarUsuario(tipoDocumento, numDocumento);
+         model.addAttribute("usuarios", new Usuarios());
+        model.addAttribute("tiposUsuario", tiposUsuarioRepository.darTiposUsuario());
+        return "usuariosNuevo";
+        
     }
   
     @GetMapping("/usuarios/{tipo_documento}/{num_documento}/delete")

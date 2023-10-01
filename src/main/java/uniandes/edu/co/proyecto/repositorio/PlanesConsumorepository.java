@@ -34,7 +34,5 @@ public interface PlanesConsumorepository extends JpaRepository<PlanesConsumo, In
     @Query(value = "DELETE FROM PlanesConsumo WHERE id = :id ", nativeQuery = true )
     void eliminarPlanConsumo(@Param("id") int id);
 
-
-    //TODO UPDATE
     
 }

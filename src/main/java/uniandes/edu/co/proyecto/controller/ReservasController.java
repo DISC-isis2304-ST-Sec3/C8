@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import uniandes.edu.co.proyecto.modelo.PlanesConsumo;
 import uniandes.edu.co.proyecto.modelo.Reservas;
 import uniandes.edu.co.proyecto.modelo.Usuarios;
 import uniandes.edu.co.proyecto.repositorio.PlanesConsumorepository;
@@ -51,9 +50,6 @@ public class ReservasController {
                                        @RequestParam(value = "planConsumo", required = true) int planConsumoId) {
         
         Usuarios usuario = usuariosRepository.darUsuarioPorNumDocumento(tipoDoc, numDoc);
-        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-        System.out.println(fechaInicio+" "+ fechaSalida+" "+ numPersonas+" "+ tipoDoc+" "+ numDoc+" "+  usuario.getPk().getCorreo()+" "+ usuario.getPk().getNombre()+" "+ planConsumoId);
-        
         reservasRepository.insertarReserva(fechaInicio, fechaSalida, numPersonas, tipoDoc, numDoc,  usuario.getPk().getCorreo(), usuario.getPk().getNombre(), planConsumoId);
         return "redirect:/reservas";
     }
@@ -64,6 +60,14 @@ public class ReservasController {
         return "redirect:/reservas";
     }
     
-    // TODO UPDATE
+    @GetMapping("/reservas/{id}/edit")
+    public String reservasEditar(@PathVariable("id") int id, Model model) {
+        reservasRepository.eliminarReserva(id);
+        model.addAttribute("reservas", new Reservas());
+        model.addAttribute("usuarios", usuariosRepository.darUsuarios());
+        model.addAttribute("planesConsumo", planConsumoRepository.darPlanesConsumo());
+        return "reservasNuevo";
+    }
+    
     
 }
