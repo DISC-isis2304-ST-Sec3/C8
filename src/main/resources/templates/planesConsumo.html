@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitacion</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div>
+        <h1>Lista de habitacionnes</h1>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>id</th>
+                    <th>Nombre</th>
+                    <th>Estadía mínima</th>
+                    <th>costo del plan</th>
+                    <th>%desc reserva</th>
+                    <th>%desc bar</th>
+                    <th>%desc restaurante</th>
+                    <th>%desc servicio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="planesConsumo : ${planesConsumo}">
+                    <tr>
+                        <td th:text="${planesConsumo.id}"></td>
+                        <td th:text="${planesConsumo.nombre}"></td>
+                        <td th:text="${planesConsumo.estadia_min}"></td>
+                        <td th:text="${planesConsumo.costo}"></td>
+                        <td th:text="${planesConsumo.desc_reserva}"></td>
+                        <td th:text="${planesConsumo.desc_bar}"></td>
+                        <td th:text="${planesConsumo.desc_restaurante}"></td>
+                        <td th:text="${planesConsumo.desc_servicio}"></td>
+                        <td>
+                            <a th:href="@{'/planesConsumo/' + ${planesConsumo.id} +  '/edit'}"
+                               >Editar</a>
+                            <a th:href="@{'/planesConsumo/' + ${planesConsumo.id} + '/delete'}"
+                               onclick="return confirm('¿Está seguro de borrar el plan de consumo?')">Eliminar</a>
+                        </td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
+        <a th:href="@{/}" class="btn btn-primary">Volver</a>
+        <a th:href="@{planesConsumo/new}" class = "btn btn-primary">Añadir plan de consumo</a>
+    </div>
+</body>
+</html>

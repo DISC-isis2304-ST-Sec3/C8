@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import uniandes.edu.co.proyecto.modelo.TiposHabitacion;
-import uniandes.edu.co.proyecto.modelo.TiposUsuario;
-import uniandes.edu.co.proyecto.modelo.Usuarios;
 import uniandes.edu.co.proyecto.repositorio.TiposHabitacionRepository;
 
 @Controller
