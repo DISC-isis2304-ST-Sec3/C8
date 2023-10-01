@@ -10,4 +10,5 @@ public class C8Controller {
     public String index() {
         return "index";
     }
+
 }

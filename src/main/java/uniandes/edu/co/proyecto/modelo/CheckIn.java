@@ -15,10 +15,13 @@ public class CheckIn {
 
         private Date fecha_ingreso;
 
-        public CheckIn(Reservas reservas_id, InformacionClientes informacionClientesPK, Date fecha_ingreso) {
+        public CheckIn(Reservas reservas_id, int informacionclientes_num_documento, String informacionclientes_tipo_documento, Date fecha_ingreso) {
+            InformacionClientes informacionClientesPK = new InformacionClientes();
+            informacionClientesPK.setPk(new InformacionClientesPK(informacionclientes_tipo_documento, informacionclientes_num_documento));
             this.pk = new CheckInPK(reservas_id, informacionClientesPK);
             this.fecha_ingreso = fecha_ingreso;
         }
+        
 
         public CheckIn() {
             ;

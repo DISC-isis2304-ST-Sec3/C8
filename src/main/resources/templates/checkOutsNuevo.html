@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear habitación</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <br>
+    <div class="container border border-2 w-70">    
+
+    <h1 class="text">Crear habitación</h1>
+
+    <form th:action="@{/checkOuts/new/save}" method="post">
+        
+        <label class="col-form-label" for="fechaSalida">Fecha del checkOut</label>
+        <input class="form-control" type="date" id="fechaSalida" name="fechaSalida" value = 0 ><br>
+
+        <label class="col-form-label" for="habitaciones">Número de habitación</label>
+        <select class="form-control" id="habitaciones" name="habitacionesId" required>
+            <option th:each="habitacionesId : ${habitaciones}" th:value="${habitacionesId.id}" th:text="${habitacionesId.id}"></option>
+        </select><br>
+
+        <label class="col-form-label" for="reservas">Número de id de reserva</label>
+        <select class="form-control" id="reservas" name="reservasId" required>
+            <option th:each="reservasId : ${reservas}" th:value="${reservasId.id}" th:text="${reservasId.id}"></option>
+        </select><br>
+
+        <br>
+        <div class="text-center">
+        <input type="submit" value="Guardar" class="btn btn-primary">
+        <a th:href="@{/checkOuts}" class="btn btn-primary">Cancelar</a>
+        </div>
+        </br>
+    </form>
+    </div>
+</body>
+</html>

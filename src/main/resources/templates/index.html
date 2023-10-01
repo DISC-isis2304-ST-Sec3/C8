@@ -18,6 +18,10 @@
             margin-top: 50px;
         }
 
+        /* Oculta los botones al inicio */
+        #buttons-admin, #buttons-client, #buttons-receptionist, #buttons-employee {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -25,16 +29,56 @@
         <h1>Hotel de los Andes</h1>
         <h3>Bienvenidos!</h3>
         <img th:src="@{/images/A.png}" width="350" alt="logo">
-        <div class="mt-4">
+
+        <select id="userType" onchange="toggleButtons()">
+            <option >   ---   </option>
+            <option value="admin">Administrador</option>
+            <option value="client">Cliente</option>
+            <option value="receptionist">Recepcionista</option>
+            <option value="employee">Empleado</option>
+        </select>
+
+        <div class="mt-4" id="buttons-admin">
             <a th:href="@{/tiposUsuario}" class="btn btn-primary btn-block mb-2">Tipos de usuario</a>
             <a th:href="@{/usuarios}" class="btn btn-primary btn-block">Usuarios</a>
             <a th:href="@{/tiposHabitacion}" class="btn btn-primary btn-block">Tipos de habitación</a>
             <a th:href="@{/habitaciones}" class="btn btn-primary btn-block">Habitaciones</a>
             <a th:href="@{/planesConsumo}" class="btn btn-primary btn-block">Planes de consumo</a>
-            <a th:href="@{/reservas}" class="btn btn-primary btn-block">Reservas</a>
             <a th:href="@{/tiposServicio}" class="btn btn-primary btn-block">Tipos de servicio</a>
         </div>
+
+        <div class="mt-4" id="buttons-client">
+            <a th:href="@{/reservas}" class="btn btn-primary btn-block">Reservas</a>
+        </div>
+
+        <div class="mt-4" id="buttons-receptionist">
+            <a th:href="@{/checkOuts}" class="btn btn-primary btn-block">checkOuts</a>
+        </div>
+
+        <div class="mt-4" id="buttons-employee">
+            <!-- <a th:href="@{/checkOuts}" class="btn btn-primary btn-block">checkOuts</a> -->
+        </div>
+
     </div>
+
+    <script>
+        function toggleButtons() {
+            var userType = document.getElementById("userType").value;
+
+            document.getElementById("buttons-admin").style.display = "none";
+            document.getElementById("buttons-client").style.display = "none";
+            document.getElementById("buttons-receptionist").style.display = "none";
+
+            if (userType === "admin") {
+                document.getElementById("buttons-admin").style.display = "block";
+            } else if (userType === "client") {
+                document.getElementById("buttons-client").style.display = "block";
+            } else if (userType === "receptionist") {
+                document.getElementById("buttons-receptionist").style.display = "block";
+            } else if (userType === "employee") {
+                document.getElementById("buttons-employee").style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
-
