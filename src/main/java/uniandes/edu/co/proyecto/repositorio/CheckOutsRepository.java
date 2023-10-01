@@ -17,6 +17,9 @@ public interface CheckOutsRepository extends JpaRepository<CheckOuts, Integer> {
     
     @Query(value = "SELECT fecha_salida FROM CheckOuts WHERE reservas_id = :id AND habitaciones_id = :id2 ", nativeQuery = true )
     String darFechaSalida(@Param("id") int idRes, @Param("id2") int idHab);
+
+    @Query(value = "SELECT SUM(costo) FROM Consumos WHERE habitaciones_id = :idHab ", nativeQuery = true )
+    double consumosHabitacion(@Param("idHab") int idhab);
     
     @Modifying
     @Transactional 
@@ -30,6 +33,8 @@ public interface CheckOutsRepository extends JpaRepository<CheckOuts, Integer> {
     @Transactional 
     @Query(value = "DELETE FROM CheckOuts WHERE reservas_id = :id ", nativeQuery = true )
     void eliminarCheckOut(@Param("id") int id);
+
+
 
     
 }

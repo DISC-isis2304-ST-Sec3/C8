@@ -25,9 +25,11 @@
                         <td th:text="${checkOut.pk.habitaciones_id.id}"></td>
                         <td th:text="${checkOut.fecha_salida}"></td>
                         <td>
-                            <a th:href="@{'/checkOuts/' + ${checkOut.pk.reservas_id} +  '/edit'}"
-                               >Editar</a>
-                            <a th:href="@{'/checkOuts/' + ${checkOut.pk.reservas_id} + '/delete'}"
+                            <a th:href="@{'/checkOuts/' + ${checkOut.pk.habitaciones_id.id} +  '/consumos'}"
+                               >Ver total a pagar</a><br>
+                            <a th:href="@{'/checkOuts/' + ${checkOut.pk.reservas_id.id} +  '/edit'}"
+                               >Editar</a><br>
+                            <a th:href="@{'/checkOuts/' + ${checkOut.pk.reservas_id.id} + '/delete'}"
                                onclick="return confirm('¿Está seguro de borrar el checkOut?')">Eliminar</a>
                         </td>
                     </tr>

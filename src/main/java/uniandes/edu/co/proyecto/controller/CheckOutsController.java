@@ -45,9 +45,9 @@ public class CheckOutsController {
     
     @PostMapping("/checkOuts/new/save") 
     public String checkOutsGuardar(@RequestParam(value = "reservasId", required = true) Integer idRes,
-                                    @RequestParam(value = "habitacionesId", required = true) Integer idHab,
-                                    @ModelAttribute("fechaSalida") String fechaI) {
-
+    @RequestParam(value = "habitacionesId", required = true) Integer idHab,
+    @ModelAttribute("fechaSalida") String fechaI) {
+        
         String fs = fechaI;
         String fs2 = checkOutsRepository.fechaValidacion(idRes);
         
@@ -71,10 +71,21 @@ public class CheckOutsController {
     @GetMapping("/checkOuts/{idRes}/edit")
     public String checkOutsEditarForm(@PathVariable("idRes") int idRes, Model model) {
         checkOutsRepository.eliminarCheckOut(idRes);
+        model.addAttribute("checkOuts", checkOutsRepository.darCheckOuts());
+        model.addAttribute("reservas", reservasRepository.darReservas());
+        model.addAttribute("habitaciones", habitacionesRepository.darHabitaciones());
         model.addAttribute("checkOuts", new CheckOuts());
         return "checkOutsNuevo";
-
+        
     }
     
+
+    @GetMapping("/checkOuts/{idHab}/consumos")
+    public String consumos(Model model, @PathVariable("idHab") int idHab) {
+        model.addAttribute("consumos", checkOutsRepository.consumosHabitacion(idHab));
+        model.addAttribute("habitac", idHab);
+        System.out.println(checkOutsRepository.consumosHabitacion(idHab));
+        return "checkOutsConsumos";
+    }
 }
 
