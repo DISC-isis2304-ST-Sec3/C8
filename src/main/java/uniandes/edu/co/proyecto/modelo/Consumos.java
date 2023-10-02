@@ -1,5 +1,6 @@
 package uniandes.edu.co.proyecto.modelo;
 
+
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -12,16 +13,21 @@ public class Consumos {
     private ConsumosPK pk;
 
     private String descripcion;
-    private double costo;
+    private Double costo;
 
 
 
     
-    public Consumos(Habitaciones Habitaciones_id, TiposServicio TiposServicio_tipo, String descripcion, double costo) {
+    public Consumos() {
+        ;
+    }
+
+    public Consumos(Habitaciones Habitaciones_id, TiposServicio TiposServicio_tipo, String descripcion, Double costo) {
         this.pk = new ConsumosPK(Habitaciones_id, TiposServicio_tipo);
         this.descripcion = descripcion;
         this.costo = costo;
     }
+
     public ConsumosPK getPk() {
         return pk;
     }
@@ -34,10 +40,10 @@ public class Consumos {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    public double getCosto() {
+    public Double getCosto() {
         return costo;
     }
-    public void setCosto(double costo) {
+    public void setCosto(Double costo) {
         this.costo = costo;
     }
 

@@ -1,6 +1,5 @@
 package uniandes.edu.co.proyecto.controller;
 
-import java.sql.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,19 +36,45 @@ public class ReservasServicioController {
         return "reservasServicioNuevo";
     }
 
-    @PostMapping("/reservasServicio/new/save") 
-    public String reservasServicioGuardar(@ModelAttribute("duracion_hora") int duracion_hora,
-        @ModelAttribute("dia") Date dia, @ModelAttribute("hora") String hora,
-        @ModelAttribute("habitaciones_id") Habitaciones habitaciones_id){
-        Integer habitacionesId =  habitaciones_id.getId();
-        reservasServicioRepository.insertarReservaServicio(duracion_hora, dia, hora, habitacionesId);
-        return "redirect:/reservasServicio";
+    @GetMapping("/reservasServicio/spa/new")
+    public String reservasSpaForm(Model model) {
+        model.addAttribute("reservasServicio", new ReservasServicio());
+        model.addAttribute("habitaciones", habitacionesRepository.darHabitaciones());
+        model.addAttribute("spas", reservasServicioRepository.darServiciosSpa());
+        return "reservasServicioNuevoSpa";
     }
 
+    @PostMapping("/reservasServicio/new/save") 
+    public String reservasServicioGuardar(@ModelAttribute("duracion_hora") int duracion_hora,
+        @ModelAttribute("dia") String dia, @ModelAttribute("hora") String hora,
+        @ModelAttribute("habitacion") int id){
+        reservasServicioRepository.insertarReservaServicio(duracion_hora, dia, hora, id);
+        return "redirect:/reservasServicio";
+    }
+    
+    @PostMapping("/reservasServicio/new/spa/save") 
+    public String reservasServicioGuardarSpa(@ModelAttribute("spaId") int servicioId,
+        @ModelAttribute("dia") String dia, @ModelAttribute("hora") String hora,
+        @ModelAttribute("habitacion") Habitaciones habitaciones_id){
+        Integer habitacionesId =  habitaciones_id.getId();
+        int duracion = (int) reservasServicioRepository.duracionServicioSpa(servicioId);
+        int spaId = reservasServicioRepository.daridSpaServicio(servicioId);
+        reservasServicioRepository.insertarReservaServicio(duracion, dia, hora, habitacionesId);
+        //reservasServicioRepository.insertarReservaSpa(servicioId, spaId);
+        return "redirect:/reservasServicio";
+    }
 
     @GetMapping("/reservasServicio/{id}/delete")
     public String reservasServicioEliminar(@PathVariable("id") int id) {
         reservasServicioRepository.eliminarReservaServicio(id);
         return "redirect:/reservasServicio";
+    }
+
+    @GetMapping("/reservasServicio/{id}/edit")
+    public String reservasServicioEditar(@PathVariable("id") int id, Model model) {
+        reservasServicioRepository.eliminarReservaServicio(id);
+        model.addAttribute("reservasServicio", new ReservasServicio());
+        model.addAttribute("habitaciones", habitacionesRepository.darHabitaciones());
+        return "reservasServicioNuevo";
     }
 }

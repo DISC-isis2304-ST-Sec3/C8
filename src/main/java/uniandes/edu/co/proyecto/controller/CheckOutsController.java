@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import uniandes.edu.co.proyecto.modelo.CheckOuts;
-import uniandes.edu.co.proyecto.modelo.Habitaciones;
 import uniandes.edu.co.proyecto.repositorio.CheckOutsRepository;
 import uniandes.edu.co.proyecto.repositorio.HabitacionesRepository;
 import uniandes.edu.co.proyecto.repositorio.ReservasRepository;
@@ -18,6 +17,8 @@ import uniandes.edu.co.proyecto.repositorio.ReservasRepository;
 @Controller
 public class CheckOutsController {
     
+    public static int idHab;
+
     @Autowired
     private CheckOutsRepository checkOutsRepository;
     
@@ -68,6 +69,12 @@ public class CheckOutsController {
         return "redirect:/checkOuts";
     }
     
+    @GetMapping("/checkOuts/{idHab}/consumos/paz")
+    public String checkOutsEliminarConsumos(Model model) {
+        checkOutsRepository.eliminarConsumos(CheckOutsController.idHab);
+        return "redirect:/checkOuts";
+    }
+    
     @GetMapping("/checkOuts/{idRes}/edit")
     public String checkOutsEditarForm(@PathVariable("idRes") int idRes, Model model) {
         checkOutsRepository.eliminarCheckOut(idRes);
@@ -83,8 +90,10 @@ public class CheckOutsController {
     @GetMapping("/checkOuts/{idHab}/consumos")
     public String consumos(Model model, @PathVariable("idHab") int idHab) {
         model.addAttribute("consumos", checkOutsRepository.consumosHabitacion(idHab));
+        model.addAttribute("consumos2", checkOutsRepository.consumos2Habitacion(idHab));
+        model.addAttribute("consumos3", checkOutsRepository.consumos3Habitacion(idHab));
         model.addAttribute("habitac", idHab);
-        System.out.println(checkOutsRepository.consumosHabitacion(idHab));
+        CheckOutsController.idHab = idHab;
         return "checkOutsConsumos";
     }
 }

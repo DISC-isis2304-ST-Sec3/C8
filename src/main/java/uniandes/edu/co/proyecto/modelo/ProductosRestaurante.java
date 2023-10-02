@@ -1,5 +1,6 @@
 package uniandes.edu.co.proyecto.modelo;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -12,13 +13,13 @@ public class ProductosRestaurante {
     private int id;
 
     private String nombre;
-    private double precio;
+    private Double precio;
     
     public ProductosRestaurante() {
         ;
     }
 
-    public ProductosRestaurante(int id, String nombre, double precio) {
+    public ProductosRestaurante(int id, String nombre, Double precio) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
@@ -40,11 +41,11 @@ public class ProductosRestaurante {
         this.nombre = nombre;
     }
 
-    public double getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
     

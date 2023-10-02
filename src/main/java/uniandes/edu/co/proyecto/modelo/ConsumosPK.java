@@ -14,8 +14,8 @@ public class ConsumosPK implements Serializable {
     private Habitaciones Habitaciones_id;
     
     @ManyToOne
-    @JoinColumn(name = "TiposServicio_tipo", referencedColumnName = "tipo")
-    private TiposServicio TiposServicio_tipo;
+    @JoinColumn(name = "TIPOSSERVICIO_TIPO", referencedColumnName = "tipo")
+    private TiposServicio tiposservicio_tipo;
 
     public ConsumosPK() {
         super();
@@ -24,7 +24,7 @@ public class ConsumosPK implements Serializable {
     public ConsumosPK(Habitaciones habitaciones_id, TiposServicio tiposServicio_tipo) {
         super();
         Habitaciones_id = habitaciones_id;
-        TiposServicio_tipo = tiposServicio_tipo;
+        tiposservicio_tipo = tiposServicio_tipo;
     }
 
     public Habitaciones getHabitaciones_id() {
@@ -35,12 +35,12 @@ public class ConsumosPK implements Serializable {
         Habitaciones_id = habitaciones_id;
     }
 
-    public TiposServicio getTiposServicio_tipo() {
-        return TiposServicio_tipo;
+    public TiposServicio gettiposservicio_tipo() {
+        return tiposservicio_tipo;
     }
 
-    public void setTiposServicio_tipo(TiposServicio tiposServicio_tipo) {
-        TiposServicio_tipo = tiposServicio_tipo;
+    public void settiposservicio_tipo(TiposServicio tiposServicio_tipo) {
+        tiposservicio_tipo = tiposServicio_tipo;
     }
 
     

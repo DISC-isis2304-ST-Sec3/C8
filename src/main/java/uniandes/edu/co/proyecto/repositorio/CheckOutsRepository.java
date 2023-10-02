@@ -9,6 +9,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import uniandes.edu.co.proyecto.modelo.CheckOuts;
+import uniandes.edu.co.proyecto.modelo.Consumos;
 
 public interface CheckOutsRepository extends JpaRepository<CheckOuts, Integer> {
     
@@ -20,6 +21,12 @@ public interface CheckOutsRepository extends JpaRepository<CheckOuts, Integer> {
 
     @Query(value = "SELECT SUM(costo) FROM Consumos WHERE habitaciones_id = :idHab ", nativeQuery = true )
     double consumosHabitacion(@Param("idHab") int idhab);
+
+    @Query(value = "SELECT costo FROM Consumos WHERE habitaciones_id = :idHab ", nativeQuery = true )
+    Collection<Double> consumos2Habitacion(@Param("idHab") int idhab);
+
+    @Query(value = "SELECT tiposservicio_tipo FROM Consumos WHERE habitaciones_id = :idHab ", nativeQuery = true )
+    Collection<String> consumos3Habitacion(@Param("idHab") int idhab);
     
     @Modifying
     @Transactional 
@@ -34,6 +41,8 @@ public interface CheckOutsRepository extends JpaRepository<CheckOuts, Integer> {
     @Query(value = "DELETE FROM CheckOuts WHERE reservas_id = :id ", nativeQuery = true )
     void eliminarCheckOut(@Param("id") int id);
 
+    @Query(value = "DELETE FROM Consumos WHERE habitaciones_id = :idHab ", nativeQuery = true )
+    double eliminarConsumos(@Param("idHab") int idhab);
 
 
     

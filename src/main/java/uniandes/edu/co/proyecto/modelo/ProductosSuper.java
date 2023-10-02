@@ -1,5 +1,7 @@
 package uniandes.edu.co.proyecto.modelo;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -12,13 +14,13 @@ public class ProductosSuper {
     private int id;
 
     private String nombre;
-    private double precio;
+    private BigDecimal precio;
     
     public ProductosSuper() {
         ;
     }
 
-    public ProductosSuper(int id, String nombre, double precio) {
+    public ProductosSuper(int id, String nombre, BigDecimal precio) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
@@ -40,11 +42,11 @@ public class ProductosSuper {
         this.nombre = nombre;
     }
 
-    public double getPrecio() {
+    public BigDecimal getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(BigDecimal precio) {
         this.precio = precio;
     }
     

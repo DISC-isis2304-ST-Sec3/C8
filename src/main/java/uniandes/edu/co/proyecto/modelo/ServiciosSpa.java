@@ -1,5 +1,7 @@
 package uniandes.edu.co.proyecto.modelo;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -12,14 +14,14 @@ public class ServiciosSpa {
     private int id;
 
     private String nombre;
-    private double costo;
+    private BigDecimal costo;
     private int duracion_min;
 
     public ServiciosSpa() {
         ;
     }
 
-    public ServiciosSpa(int id, String nombre, double costo, int duracion_min) {
+    public ServiciosSpa(int id, String nombre, BigDecimal costo, int duracion_min) {
         this.id = id;
         this.nombre = nombre;
         this.costo = costo;
@@ -42,11 +44,11 @@ public class ServiciosSpa {
         this.nombre = nombre;
     }
 
-    public double getCosto() {
+    public BigDecimal getCosto() {
         return costo;
     }
 
-    public void setCosto(double costo) {
+    public void setCosto(BigDecimal costo) {
         this.costo = costo;
     }
 
