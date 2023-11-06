@@ -1,12 +1,12 @@
 package uniandes.edu.co.proyecto.repositorio;
 
+import java.sql.Date;
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-
 
 import jakarta.transaction.Transactional;
 import uniandes.edu.co.proyecto.modelo.Consumos;
@@ -42,9 +42,9 @@ public interface ConsumosRepository extends JpaRepository<Consumos, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO Consumos (Habitaciones_id, TiposServicio_tipo, descripcion, costo) " +
-                   "VALUES ( :idHab , :tipoServ , :descrip , :costo)", nativeQuery = true)
-    void insertarConsumo(@Param("idHab") int idHab, @Param("tipoServ") String tipoServ, @Param("descrip") String descrip, @Param("costo") Double costo);
+    @Query(value = "INSERT INTO Consumos (Habitaciones_id, TiposServicio_tipo, descripcion, costo, fecha_consumo) " +
+                   "VALUES ( :idHab , :tipoServ , :descrip , :costo, :fecha_consumo)", nativeQuery = true)
+    void insertarConsumo(@Param("idHab") int idHab, @Param("tipoServ") String tipoServ, @Param("descrip") String descrip, @Param("costo") Double costo, @Param("fecha_consumo") Date fecha_consumo);
                         
     @Modifying
     @Transactional 

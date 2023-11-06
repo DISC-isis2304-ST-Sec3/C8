@@ -16,18 +16,21 @@
         
         <label class="col-form-label" for="idHab">Habitación</label>
         <select class="form-control" id="idHab" name="idHab" required>
-            <option th:each="habitacion : ${habitaciones}" th:value="${habitacion.id}" th:text="${habitacion.id}"></option>
+        <option th:each="habitacion : ${habitaciones}" th:value="${habitacion.id}" th:text="${habitacion.id}"></option>
         </select>
         <br>
-        
-        <label class="col-form-label" for="nombreProd">Habitación</label>
+
+        <label class="col-form-label" for="nombreProd">Producto</label>
         <select class="form-control" id="nombreProd" name="nombreProd" required>
-            <option th:each="producto : ${productos}" th:value="${producto.nombre}" th:text="${producto.nombre}"></option>
+        <option th:each="producto : ${productos}" th:value="${producto}" th:text="${producto}"></option>
         </select>
         <br>
         
         <label class="col-form-label" for="descripcion">Descripción</label>
         <input class="form-control" type="text" id="descripcion" name="descripcion" ><br>
+
+        <label class="col-form-label" for="fecha_consumo">fecha consumo</label>
+        <input class="form-control" type="date" id="fecha_consumo" name="fecha_consumo" ><br>
         
         <br>
         <div class="text-center">

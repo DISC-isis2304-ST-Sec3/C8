@@ -16,20 +16,17 @@
                     <th>Tipo de servicio</th>
                     <th>Descripción</th>
                     <th>Costo</th>
-                    <th>Acciones</th>
+                    <th>Fecha consumo</th>
                 </tr>
             </thead>
             <tbody>
                 <th:block th:each="consumo : ${consumos}">
                     <tr>
                         <td th:text="${consumo.pk.habitaciones_id.id}"></td>
-                        <td th:text="${consumo.pk.tiposservivio_tipo.tipo}"></td>
+                        <td th:text="${consumo.pk.tiposservicio_tipo.tipo}"></td>
                         <td th:text="${consumo.descripcion}"></td>
-                        <td th:text="${consumo.costo}"></td>
-                        <td>
-                            <a th:href="@{'/consumos/' + ${consumo.pk.reservas_id.id} + '/delete'}"
-                               onclick="return confirm('¿Está seguro de borrar el consumo?')">Eliminar</a>
-                        </td>
+                        <td th:text="${consumo.costo}"></td> 
+                        <td th:text="${consumo.fecha_consumo}"></td>
                     </tr>
                 </th:block>
             </tbody>

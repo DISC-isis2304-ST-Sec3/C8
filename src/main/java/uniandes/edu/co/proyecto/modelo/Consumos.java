@@ -1,6 +1,8 @@
 package uniandes.edu.co.proyecto.modelo;
 
 
+import java.sql.Date;
+
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -14,7 +16,7 @@ public class Consumos {
 
     private String descripcion;
     private Double costo;
-
+    private Date fecha_consumo;
 
 
     
@@ -22,10 +24,11 @@ public class Consumos {
         ;
     }
 
-    public Consumos(Habitaciones Habitaciones_id, TiposServicio TiposServicio_tipo, String descripcion, Double costo) {
+    public Consumos(Habitaciones Habitaciones_id, TiposServicio TiposServicio_tipo, String descripcion, Double costo, Date fecha_consumo) {
         this.pk = new ConsumosPK(Habitaciones_id, TiposServicio_tipo);
         this.descripcion = descripcion;
         this.costo = costo;
+        this.fecha_consumo = fecha_consumo;
     }
 
     public ConsumosPK getPk() {
@@ -45,6 +48,12 @@ public class Consumos {
     }
     public void setCosto(Double costo) {
         this.costo = costo;
+    }
+    public Date getFecha_consumo() {
+        return fecha_consumo;
+    }
+    public void setFecha_consumo(Date fecha_consumo) {
+        this.fecha_consumo = fecha_consumo;
     }
 
     

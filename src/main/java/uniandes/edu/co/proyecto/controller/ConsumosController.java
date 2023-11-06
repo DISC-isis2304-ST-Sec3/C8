@@ -1,5 +1,7 @@
 package uniandes.edu.co.proyecto.controller;
 
+import java.sql.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -66,33 +68,37 @@ public class ConsumosController {
     
     @PostMapping("/consumos/bar/new/save") 
     public String consumosbarGuardar(@RequestParam(value = "idHab") int idHab,
-    @ModelAttribute("tipoServ") String tipoServ, @RequestParam( value = "descripcion") String descripcion, @RequestParam(value = "nombreProd") String nombreProd ){ 
+    @ModelAttribute("tipoServ") String tipoServ, @RequestParam( value = "descripcion") String descripcion, @RequestParam(value = "nombreProd") String nombreProd, @RequestParam(value = "fecha_consumo") Date fecha_consumo ){ 
         Double costo = consumosRepository.darPrecioBar(nombreProd);
-        consumosRepository.insertarConsumo(idHab, tipoServ, descripcion, costo);
+        tipoServ = "bar";
+        consumosRepository.insertarConsumo(idHab, tipoServ, descripcion, costo, fecha_consumo);
         return "redirect:/consumos";
     }
     
     @PostMapping("/consumos/restaurante/new/save") 
     public String consumosresGuardar(@RequestParam(value = "idHab") int idHab,
-    @ModelAttribute("tipoServ") String tipoServ, @RequestParam( value = "descripcion") String descripcion, @RequestParam(value = "nombreProd") String nombreProd ){ 
+    @ModelAttribute("tipoServ") String tipoServ, @RequestParam( value = "descripcion") String descripcion, @RequestParam(value = "nombreProd") String nombreProd, @RequestParam(value = "fecha_consumo") Date fecha_consumo ){ 
         Double costo = consumosRepository.darPrecioRestaurante(nombreProd);
-        consumosRepository.insertarConsumo(idHab, tipoServ, descripcion, costo);
+        tipoServ = "restaurante";
+        consumosRepository.insertarConsumo(idHab, tipoServ, descripcion, costo, fecha_consumo);
         return "redirect:/consumos";
     }
     
     @PostMapping("/consumos/tienda/new/save") 
     public String consumostiendaGuardar(@RequestParam(value = "idHab") int idHab,
-    @ModelAttribute("tipoServ") String tipoServ, @RequestParam( value = "descripcion") String descripcion, @RequestParam(value = "nombreProd") String nombreProd ){ 
+    @ModelAttribute("tipoServ") String tipoServ, @RequestParam( value = "descripcion") String descripcion, @RequestParam(value = "nombreProd") String nombreProd, @RequestParam(value = "fecha_consumo") Date fecha_consumo ){ 
         Double costo = consumosRepository.darPrecioTienda(nombreProd);
-        consumosRepository.insertarConsumo(idHab, tipoServ, descripcion, costo);
+        tipoServ = "tienda";
+        consumosRepository.insertarConsumo(idHab, tipoServ, descripcion, costo, fecha_consumo);
         return "redirect:/consumos";
     }
     
     @PostMapping("/consumos/supermercado/new/save") 
     public String consumossuperGuardar(@RequestParam(value = "idHab") int idHab,
-    @ModelAttribute("tipoServ") String tipoServ, @RequestParam( value = "descripcion") String descripcion, @RequestParam(value = "nombreProd") String nombreProd ){ 
+    @ModelAttribute("tipoServ") String tipoServ, @RequestParam( value = "descripcion") String descripcion, @RequestParam(value = "nombreProd") String nombreProd, @RequestParam(value = "fecha_consumo") Date fecha_consumo ){ 
         Double costo = consumosRepository.darPrecioSuper(nombreProd);
-        consumosRepository.insertarConsumo(idHab, tipoServ, descripcion, costo);
+        tipoServ = "supermercado";
+        consumosRepository.insertarConsumo(idHab, tipoServ, descripcion, costo, fecha_consumo);
         return "redirect:/consumos";
     }
     
@@ -102,6 +108,4 @@ public class ConsumosController {
         consumosRepository.eliminarConsumo(idHab);
         return "redirect:/consumos";
     }
-    
-    
 }
