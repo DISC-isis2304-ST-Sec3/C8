@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuenosClientes</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div>
+        <h3 style="text-align: center">Mostrar buenos clientes.</h5>
+        <h6>Muestra 'Buen usuario por tiempo' o el valor de consumos por el cual es un buen usuario</h6>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Num documento cliente</th>
+                    <th>Nombre cliente</th>
+                    <th>Razon</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="cliente : ${clientes}">
+                    <td th:text="${cliente[0]}"></td>
+                    <td th:text="${cliente[1]}"></td>
+                    <td th:text="${cliente[2]}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/}" class="btn btn-primary">Volver</a>
+    </div>
+</body>
+</html>  

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes excelentes</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div>
+        <p></p>
+        <h4 style="text-align: center">Clientes excelentes.</h4>
+        <h5 style="text-align: center">Por reservas en cada trimestre</h5>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Num documento</th>
+                    <th>correo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="clienteA : ${clientesA}">
+                    <td th:text="${clienteA[0]}"></td>
+                    <td th:text="${clienteA[1]}"></td>
+                    <td th:text="${clienteA[2]}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div></div>
+        <h5 style="text-align: center">Consumo +300.000</h5>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Num documento</th>
+                    <th>correo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="clienteB : ${clientesB}">
+                    <td th:text="${clienteB[0]}"></td>
+                    <td th:text="${clienteB[1]}"></td>
+                    <td th:text="${clienteB[2]}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div></div>
+        <h5 style="text-align: center">Reservas +4h</h5>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Num documento</th>
+                    <th>correo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="clienteC : ${clientesC}">
+                    <td th:text="${clienteC[0]}"></td>
+                    <td th:text="${clienteC[1]}"></td>
+                    <td th:text="${clienteC[2]}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/}" class="btn btn-primary">Volver</a>
+    </div>
+</body>
+</html> 

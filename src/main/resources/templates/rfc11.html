@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caracteristicas por fecha</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div>
+        <p></p>
+        <h4 style="text-align: center">Caracteristicas por semana</h4>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Semana</th>
+                    <th>Servicio mas consumido</th>
+                    <th>Servicio menos consumido</th>
+                    <th>Habitacion mas solicitada</th>
+                    <th>Habitacion menos solicitada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="c : ${caract}">
+                    <td th:text="${c[0]}"></td>
+                    <td th:text="${c[1]}"></td>
+                    <td th:text="${c[2]}"></td>
+                    <td th:text="${c[3]}"></td>
+                    <td th:text="${c[4]}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/}" class="btn btn-primary">Volver</a>
+    </div>
+</body>
+</html> 
