@@ -1,7 +1,6 @@
 ### C8
 
-|Nombre|Código|
+|Nombre|
 |---|---|
-|J. Camilo mercado|202021541|
-|Jhon Serrato||
-|Luis Borbón||
+|John Serrato|
+|Luis Borbón|
