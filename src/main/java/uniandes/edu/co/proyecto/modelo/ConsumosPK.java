@@ -1,6 +1,7 @@
 package uniandes.edu.co.proyecto.modelo;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
@@ -17,14 +18,16 @@ public class ConsumosPK implements Serializable {
     @JoinColumn(name = "tiposservicio_tipo", referencedColumnName = "tipo")
     private TiposServicio tiposservicio_tipo;
 
+    private Date fecha_consumo;
     public ConsumosPK() {
         super();
     }
 
-    public ConsumosPK(Habitaciones habitaciones_id, TiposServicio tiposServicio_tipo) {
+    public ConsumosPK(Habitaciones habitaciones_id, TiposServicio tiposServicio_tipo, Date fecha_Consumo) {
         super();
         Habitaciones_id = habitaciones_id;
         tiposservicio_tipo = tiposServicio_tipo;
+        fecha_consumo = fecha_Consumo;
     }
 
     public Habitaciones getHabitaciones_id() {
@@ -41,6 +44,14 @@ public class ConsumosPK implements Serializable {
 
     public void setTiposservicio_tipo(TiposServicio tiposServicio_tipo) {
         tiposservicio_tipo = tiposServicio_tipo;
+    }
+
+    public Date getFecha_consumo() {
+        return fecha_consumo;
+    }
+
+    public void setFecha_consumo(Date fecha_Consumo) {
+        fecha_consumo = fecha_Consumo; 
     }
 
 }

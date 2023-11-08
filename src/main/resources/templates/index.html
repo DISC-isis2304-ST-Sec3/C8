@@ -33,8 +33,10 @@
         <select id="userType" onchange="toggleButtons()">
             <option >   ---   </option>
             <option value="admin">Administrador</option>
+            <option value="gerenteG">Gerente general</option>
             <option value="client">Cliente</option>
             <option value="receptionist">Recepcionista</option>
+            <option value="gerente">Gerente</option>
             <option value="employee">Empleado</option>
         </select>
 
@@ -46,6 +48,11 @@
             <a th:href="@{/planesConsumo}" class="btn btn-primary btn-block">Planes de consumo</a>
             <a th:href="@{/tiposServicio}" class="btn btn-primary btn-block">Tipos de servicio</a>
         </div>
+
+        <div class="mt-4" id="buttons-gerenteG">
+            <a th:href="@{/rfc11}" class="btn btn-primary btn-block">RFC11</a>
+            <a th:href="@{/rfc12}" class="btn btn-primary btn-block">RFC12</a>
+        </div>
         
         <div class="mt-4" id="buttons-client">
             <a th:href="@{/reservas}" class="btn btn-primary btn-block">Reservas</a>
@@ -54,6 +61,15 @@
 
         <div class="mt-4" id="buttons-receptionist">
             <a th:href="@{/checkOuts}" class="btn btn-primary btn-block">checkOuts</a>
+            <a th:href="@{/rfc9}" class="btn btn-primary btn-block">RFC9</a>
+            <a th:href="@{/rfc10}" class="btn btn-primary btn-block">RFC10</a>
+        </div>
+
+        <div class="mt-4" id="buttons-gerente">
+            <a th:href="@{/reservas}" class="btn btn-primary btn-block">Reservas</a>
+            <a th:href="@{/reservasServicio}" class="btn btn-primary btn-block">Reservas de servicio</a>
+            <a th:href="@{/rfc9}" class="btn btn-primary btn-block">RFC9</a>
+            <a th:href="@{/rfc10}" class="btn btn-primary btn-block">RFC10</a>
         </div>
         
         <div class="mt-4" id="buttons-employee">
@@ -64,32 +80,44 @@
             <a th:href="@{/rfc5}" class="btn btn-primary btn-block">RFC5</a>
             <a th:href="@{/rfc6}" class="btn btn-primary btn-block">RFC6</a>
             <a th:href="@{/rfc7}" class="btn btn-primary btn-block">RFC7</a>
-            <a th:href="@{/rfc9}" class="btn btn-primary btn-block">RFC9</a>
-            <a th:href="@{/rfc10}" class="btn btn-primary btn-block">RFC10</a>
-            <a th:href="@{/rfc11}" class="btn btn-primary btn-block">RFC11</a>
-            <a th:href="@{/rfc12}" class="btn btn-primary btn-block">RFC12</a>
+            <a th:href="@{/rfc8}" class="btn btn-primary btn-block">RFC8</a>
         </div>
 
     </div>
 
     <script>
         function toggleButtons() {
-            var userType = document.getElementById("userType").value;
+        var userType = document.getElementById("userType").value;
 
+        document.getElementById("buttons-admin").style.display = "none";
+        document.getElementById("buttons-gerenteG").style.display = "none";
+        document.getElementById("buttons-client").style.display = "none";
+        document.getElementById("buttons-receptionist").style.display = "none";
+        document.getElementById("buttons-gerente").style.display = "none";
+
+        if (userType === "admin") {
+            document.getElementById("buttons-admin").style.display = "block";
+        } else if (userType === "gerenteG") {
+            document.getElementById("buttons-gerenteG").style.display = "block";
+        } else if (userType === "client") {
+            document.getElementById("buttons-client").style.display = "block";
+        } else if (userType === "receptionist") {
+            document.getElementById("buttons-receptionist").style.display = "block";
+        } else if (userType === "gerente") {
+            document.getElementById("buttons-gerente").style.display = "block";
+        } else if (userType === "employee") {
+            document.getElementById("buttons-employee").style.display = "block";
+        } else {
             document.getElementById("buttons-admin").style.display = "none";
+            document.getElementById("buttons-gerenteG").style.display = "none";
             document.getElementById("buttons-client").style.display = "none";
             document.getElementById("buttons-receptionist").style.display = "none";
+            document.getElementById("buttons-gerente").style.display = "none";
+            document.getElementById("buttons-employee").style.display = "none";
+    }
+    window.onload = toggleButtons;
+}
 
-            if (userType === "admin") {
-                document.getElementById("buttons-admin").style.display = "block";
-            } else if (userType === "client") {
-                document.getElementById("buttons-client").style.display = "block";
-            } else if (userType === "receptionist") {
-                document.getElementById("buttons-receptionist").style.display = "block";
-            } else if (userType === "employee") {
-                document.getElementById("buttons-employee").style.display = "block";
-            }
-        }
     </script>
 </body>
 </html>
