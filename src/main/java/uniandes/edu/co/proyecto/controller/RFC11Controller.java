@@ -16,8 +16,12 @@ public class RFC11Controller {
 
     @GetMapping("/rfc11")
     public String rfc11(Model model) {
+        long inicio = System.nanoTime();
         Collection<Object[]> caract = rfc11Repository.rfc11();
         model.addAttribute("caract", caract);
+        long fin = System.nanoTime();
+        double tiempo = (fin - inicio)/1000000000.0;
+        model.addAttribute("Tiempo", tiempo);
         return "rfc11";
     }
 

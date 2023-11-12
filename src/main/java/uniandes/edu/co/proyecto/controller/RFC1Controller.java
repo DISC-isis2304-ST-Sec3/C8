@@ -16,10 +16,16 @@ public class RFC1Controller {
 
     @GetMapping("/rfc1")
     public String rfc1(Model model) {
+        long inicio = System.nanoTime();
         Collection<Object[]> consumos = rfc1Repository.rfc1();
+        long fin = System.nanoTime();
+        double tiempo = (fin - inicio)/1000000000.0;
         model.addAttribute("Costos", consumos);
+        model.addAttribute("Tiempo", tiempo);
         return "rfc1";
     }
 
-    
+    /*long fin = System.nanoTime();
+        double tiempo = (fin - inicio)/1000000000.0;
+        model.addAttribute("Tiempo", tiempo);*/
 }

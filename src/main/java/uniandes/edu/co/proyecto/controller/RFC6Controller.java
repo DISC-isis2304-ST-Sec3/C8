@@ -16,9 +16,13 @@ public class RFC6Controller {
 
     @GetMapping("/rfc6")
     public String rfc6(Model model) {
+        long inicio = System.nanoTime();
         Collection<Object[]> fechasA = rfc6Repository.rfc6A();
         Collection<Object[]> fechasB = rfc6Repository.rfc6B();
         Collection<Object[]> fechasC = rfc6Repository.rfc6C();
+        long fin = System.nanoTime();
+        double tiempo = (fin - inicio)/1000000000.0;
+        model.addAttribute("Tiempo", tiempo);
         model.addAttribute("fechasA", fechasA);
         model.addAttribute("fechasB", fechasB);
         model.addAttribute("fechasC", fechasC);

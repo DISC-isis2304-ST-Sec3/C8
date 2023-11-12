@@ -16,7 +16,11 @@ public class RFC8Controller {
 
     @GetMapping("/rfc8")
     public String rfc8(Model model) {
+        long inicio = System.nanoTime();
         Collection<Object[]> semanas = rfc8Repository.rfc8();
+        long fin = System.nanoTime();
+        double tiempo = (fin - inicio)/1000000000.0;
+        model.addAttribute("Tiempo", tiempo);
         model.addAttribute("semanas", semanas); 
         return "rfc8";
     }

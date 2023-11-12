@@ -16,7 +16,11 @@ public class RFC7Controller {
 
     @GetMapping("/rfc7")
     public String rfc7(Model model) {
+        long inicio = System.nanoTime();
         Collection<Object[]> clientes = rfc7Repository.rfc7();
+        long fin = System.nanoTime();
+        double tiempo = (fin - inicio)/1000000000.0;
+        model.addAttribute("Tiempo", tiempo);
         model.addAttribute("clientes", clientes);
         return "rfc7";
     }

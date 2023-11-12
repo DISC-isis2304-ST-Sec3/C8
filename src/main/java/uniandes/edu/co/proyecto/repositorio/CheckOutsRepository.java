@@ -9,7 +9,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import uniandes.edu.co.proyecto.modelo.CheckOuts;
-import uniandes.edu.co.proyecto.modelo.Consumos;
 
 public interface CheckOutsRepository extends JpaRepository<CheckOuts, Integer> {
     

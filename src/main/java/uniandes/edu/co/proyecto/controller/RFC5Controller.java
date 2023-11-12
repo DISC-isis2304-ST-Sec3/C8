@@ -32,7 +32,11 @@ public class RFC5Controller {
         model.addAttribute("fechaFin", fechaFin);
         Collection<String> numerosDocumento = rfc5Repository.darNumerosDocumento();
         model.addAttribute("numerosDocumento", numerosDocumento);
+        long inicio = System.nanoTime();                           
         Collection<Object[]> consumos = rfc5Repository.rfc5(fechaInicio, fechaFin, num_documento);
+        long fin = System.nanoTime();
+        double tiempo = (fin - inicio)/1000000000.0;
+        model.addAttribute("Tiempo", tiempo);
         model.addAttribute("Consumos", consumos);
         return "rfc5";
     }

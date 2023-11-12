@@ -32,7 +32,11 @@ public class RFC10Controller {
         model.addAttribute("fechaFin", fechaFin);
         Collection<String> tiposServicio = rfc10Repository.darTipoServicio();
         model.addAttribute("tiposServicio", tiposServicio);
+        long inicio = System.nanoTime();
         Collection<Object[]> servicios = rfc10Repository.rfc10(fechaInicio, fechaFin, tipoServicio);
+        long fin = System.nanoTime();
+        double tiempo = (fin - inicio)/1000000000.0;
+        model.addAttribute("Tiempo", tiempo);
         model.addAttribute("servicios", servicios);
         return "rfc10";
     }

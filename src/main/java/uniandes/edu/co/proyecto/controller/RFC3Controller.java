@@ -17,7 +17,11 @@ public class RFC3Controller {
 
     @GetMapping("/rfc3")
     public String rfc3(Model model) {
+        long inicio = System.nanoTime();
         Collection<Object[]> habitaciones = rfc3Repository.rfc3();
+        long fin = System.nanoTime();
+        double tiempo = (fin - inicio)/1000000000.0;
+        model.addAttribute("Tiempo", tiempo);
         model.addAttribute("Habitaciones", habitaciones);
         return "rfc3";
     }

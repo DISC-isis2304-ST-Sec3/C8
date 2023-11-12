@@ -27,8 +27,11 @@ public class RFC2Controller {
                                     @RequestParam(value = "fechaFin", required = true) Date fechaFin) {
         model.addAttribute("fechaInicio", fechaInicio);
         model.addAttribute("fechaFin", fechaFin);
-
+        long inicio = System.nanoTime();                                    
         Collection<Object[]> servicios = rfc2Repository.rfc2(fechaInicio, fechaFin);
+        long fin = System.nanoTime();
+        double tiempo = (fin - inicio)/1000000000.0;
+        model.addAttribute("Tiempo", tiempo);
         model.addAttribute("Servicios", servicios);
         return "rfc2";
     }
