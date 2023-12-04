@@ -1,48 +1,71 @@
+
 package uniandes.edu.co.proyecto.modelo;
 
-import java.sql.Date;
+import java.util.Date;
+import java.util.List;
 
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.format.annotation.DateTimeFormat;
 
-@Entity
-@Table(name = "checkin")
+@Document (collection = "checkIn")
 public class CheckIn {
+ 
+    @Id
+    private String id;
 
-        @EmbeddedId
-        private CheckInPK pk;
+    @Field("reserva")
+    private ObjectId reserva;
 
-        private Date fecha_ingreso;
+    @Field("cliente")
+    private ObjectId cliente; 
 
-        public CheckIn(Reservas reservas_id, int informacionclientes_num_documento, String informacionclientes_tipo_documento, Date fecha_ingreso) {
-            InformacionClientes informacionClientesPK = new InformacionClientes();
-            informacionClientesPK.setPk(new InformacionClientesPK(informacionclientes_tipo_documento, informacionclientes_num_documento));
-            this.pk = new CheckInPK(reservas_id, informacionClientesPK);
-            this.fecha_ingreso = fecha_ingreso;
-        }
-        
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date fechaIngreso; 
 
-        public CheckIn() {
-            ;
-        }
+    public CheckIn(){
+    }
 
-        public CheckInPK getPk() {
-            return pk;
-        }
+    public CheckIn( ObjectId reserva, ObjectId cliente, Date fechaIngreso){
+        this.reserva = reserva;
+        this.cliente = cliente;
+        this.fechaIngreso = fechaIngreso;
 
-        public void setPk(CheckInPK pk) {
-            this.pk = pk;
-        }
+    }
+    
+    public String getId() {
+        return id;
+    }
 
-        public Date getFecha_ingreso() {
-            return fecha_ingreso;
-        }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-        public void setFecha_ingreso(Date fecha_ingreso) {
-            this.fecha_ingreso = fecha_ingreso;
-        }
+    public ObjectId getCliente() {
+        return cliente;
+    }
 
-        
+    public void setCliente(ObjectId cliente) {
+        this.cliente = cliente;
+    }
 
+    public Date getFechaIngreso() {
+        return fechaIngreso;
+    }
+
+    public void setFechaIngreso(Date fechaIngreso){
+        this.fechaIngreso = fechaIngreso;
+    }
+
+    public ObjectId getReserva() {
+        return reserva;
+    }
+
+    public void setReserva(ObjectId reserva) {
+        this.reserva = reserva;
+    }
+    
 }

@@ -1,41 +1,55 @@
 package uniandes.edu.co.proyecto.controller;
-
-
-import java.sql.Date;
-import java.util.Collection;
+ 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.aggregation.AggregationResults;
+import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import uniandes.edu.co.proyecto.repositorio.RFC2Repository;
+import uniandes.edu.co.proyecto.modelo.ReservaResult;
 
-@Controller
+import org.springframework.ui.Model;
+
+import java.util.*;
+
+@RestController
 public class RFC2Controller {
 
     @Autowired
-    private RFC2Repository rfc2Repository;
+    private MongoTemplate mongoTemplate;
 
     @GetMapping("/rfc2")
-    public String rfc2(Model model) {
-        return "formRFC2";
+    public String getOcupacion(Model model){
+        Date fechaActual = new Date();
+        Calendar c = Calendar.getInstance();
+        c.setTime(fechaActual);
+        c.add(Calendar.YEAR, -1);
+        Date fechaInicio = c.getTime();
+
+        Aggregation aggregation = Aggregation.newAggregation(
+            Aggregation.match(Criteria.where("fechaEntrada").gte(fechaInicio).lte(fechaActual)),
+            Aggregation.project("habitacion", "fechaEntrada", "fechaSalida")
+                    .andExpression("(fechaSalida - fechaEntrada) / (1000 * 60 * 60 * 24)").as("diasOcupacion")
+    ); 
+
+    AggregationResults<ReservaResult> results = mongoTemplate.aggregate(aggregation, "reservas", ReservaResult.class);
+    System.out.println(results.getMappedResults()); // Linea de impresion agregada
+    Map<String, Double> ocupacionPorHabitacion = new HashMap<>();
+    for (ReservaResult result : results) {
+        String habitacion = result.getHabitacion();
+        Double diasOcupacion = result.getDiasOcupacion();
+        ocupacionPorHabitacion.merge(habitacion, diasOcupacion, Double::sum);
     }
 
-    @GetMapping("/rfc2/rango")
-    public String rfc2Rango(Model model, @RequestParam(value = "fechaInicio", required = true) Date fechaInicio,
-                                    @RequestParam(value = "fechaFin", required = true) Date fechaFin) {
-        model.addAttribute("fechaInicio", fechaInicio);
-        model.addAttribute("fechaFin", fechaFin);
-        long inicio = System.nanoTime();                                    
-        Collection<Object[]> servicios = rfc2Repository.rfc2(fechaInicio, fechaFin);
-        long fin = System.nanoTime();
-        double tiempo = (fin - inicio)/1000000000.0;
-        model.addAttribute("Tiempo", tiempo);
-        model.addAttribute("Servicios", servicios);
-        return "rfc2";
+    Map<String, Double> indiceOcupacionPorHabitacion = new HashMap<>();
+    for (Map.Entry<String, Double> entry : ocupacionPorHabitacion.entrySet()) {
+        double indiceOcupacion = (entry.getValue() / 365) * 100;
+        indiceOcupacionPorHabitacion.put(entry.getKey(), indiceOcupacion);
     }
 
-
-    
+    model.addAttribute("rfc2", indiceOcupacionPorHabitacion);
+    return "rfc2";
+}
 }

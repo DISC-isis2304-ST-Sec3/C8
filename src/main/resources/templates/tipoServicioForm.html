@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Tipo de Servicio</title>
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Nuevo Tipo de Servicio</h1>
+
+    <!-- Formulario de creación de TipoBebida -->
+<form th:action="@{/crearTipoServicio}" th:object="${nuevoTipoServicio}" method="post">
+
+    <!-- Campo para el nombre del tipo de bebida -->
+    <label for="tipo">Tipo de servicio:</label>
+    <input type="text" id="tipo" name="tipo" th:field="*{tipo}" required />
+
+    <label for="descripcion">descripcion:</label>
+    <input type="text" id="descripcion" name="descripcion" th:field="*{descripcion}" required />
+
+    <!-- Botón de envío -->
+    <button type="submit" class="btn btn-success">Crear Tipo de servicio</button>
+</form>
+
+</div>
+
+</body>
+</html>

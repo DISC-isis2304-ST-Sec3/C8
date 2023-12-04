@@ -1,34 +1,24 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>20 servicios más populares</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <title>RFC2</title>
 </head>
 <body>
-    <div>
-        <h1>20 servicios más populares</h1>
-        
-        <table class="table table-hover table-bordered">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Servicio</th>
-                    <th>Cantidad consumos</th>
-                </tr>
-            </thead>
-            <tbody>
-                <th:block th:each="Servicio : ${Servicios}">
-                    <tr>
-                        <td th:text="${Servicio[0]}"></td>
-                        <td th:text="${Servicio[1]}"></td>
-                    </tr>
-                </th:block>
-            </tbody>
-        </table>
-        <h5 th:text="${'Tiempo: ' + Tiempo}"></h5>
-
-        <a th:href="@{/}" class="btn btn-primary">Volver</a>
-    </div>
+    <h1>RFC2</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Habitacion</th>
+                <th>Indice de Ocupacion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="entry : ${rfc2}">
+                <td th:text="${entry.key}"></td>
+                <td th:text="${entry.value}"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

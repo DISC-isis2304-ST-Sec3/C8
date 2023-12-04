@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Reservas</title>
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+    <div class="container mt-3">
+        <h1>No hay reservas disponibles</h1>
+        <p>Lo sentimos, no hay reservas disponibles para el cliente y fecha proporcionados.</p>
+
+        <!-- Botón para volver -->
+        <a th:href="@{/checksIn}" class="btn btn-primary">Volver</a>
+    </div>
+
+</body>
+</html>

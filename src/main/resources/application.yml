@@ -1,0 +1,11 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://jserratos:Millonarios15@cluster0.cs7dq6l.mongodb.net/
+      database: HotelAndes
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+server: 
+  port: 8081

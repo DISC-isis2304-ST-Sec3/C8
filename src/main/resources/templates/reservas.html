@@ -1,53 +1,58 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habitacion</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <title>Reservas</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
 </head>
 <body>
-    <div>
-        <h1>Lista de reservas</h1>
-        <table class="table table-hover table-bordered">
-            <thead class="thead-dark">
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+    <div class="container mt-3">
+        <h1>Reservas</h1>
+        
+        <table class="table">
+            <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Fecha ingreso</th>
-                    <th>Fecha salida</th>
-                    <th>Cantidad de personas</th>
-                    <th>Tipo documento del responsable</th>
-                    <th>Num. documento del responsable</th>
-                    <th>Correo</th>
-                    <th>Nombre</th>
-                    <th>Plan de consumo</th>
-                    <th>Acciones</th>
+                    <th>fechaEntrada</th>
+                    <th>fechaSalida</th>
+                    <th>numero personas</th>
+                    <th>habitacion [Object Id]</th>
+                    <th>cliente</th>
                 </tr>
             </thead>
             <tbody>
-                <th:block th:each="reserva : ${reservas}">
-                    <tr>
-                        <td th:text="${reserva.id}"></td>
-                        <td th:text="${reserva.fecha_inicio}"></td>
-                        <td th:text="${reserva.fecha_salida}"></td>
-                        <td th:text="${reserva.num_personas}"></td>
-                        <td th:text="${reserva.usuariosPK.pk.tipo_documento}"></td>
-                        <td th:text="${reserva.usuariosPK.pk.num_documento}"></td>
-                        <td th:text="${reserva.usuariosPK.pk.correo}"></td>
-                        <td th:text="${reserva.usuariosPK.pk.nombre}"></td>
-                        <td th:text="${reserva.PlanesConsumo_id.nombre}"></td>
-                        <td>
-                            <a th:href="@{'/reservas/' + ${reserva.id} +  '/edit'}"
-                               >Editar</a>
-                            <a th:href="@{'/reservas/' + ${reserva.id} + '/delete'}"
-                               onclick="return confirm('¿Está seguro de borrar la reserva?')">Eliminar</a>
-                        </td>
-                    </tr>
-                </th:block>
+                <tr th:each="reserva: ${reservas}">
+                    <td th:text="${reserva.fechaEntrada}"></td>
+                    <td th:text="${reserva.fechaSalida}"></td>
+                    <td th:text="${reserva.numeroPersonas}"></td>
+                    <td th:text="${reserva.habitacion}"></td>
+                    <td th:text="${reserva.cliente.tipoDocumento}"></td>
+                    <td th:text="${reserva.cliente.numDocumento}"></td>
+                    <td th:text="${reserva.cliente.nombre}"></td>
+                    
+                    <td>
+                        <h5 th:text="${reserva.cliente.correo}"> </h5>
+    
+                        <!-- Botón para redirigir al formulario de la eliminacion del tipo -->
+                        <form th:action="@{/deleteReserva}" method="post">
+                            <input type="hidden" name="id" th:value="${reserva.id}" />
+                            <button type="submit" class="btn btn-primary" style="background-color: red; border-color: red; margin-top: 10px;">Eliminar reserva</button>
+                        </form>
+                    </td>
+                </tr>
             </tbody>
         </table>
-        <a th:href="@{/}" class="btn btn-primary">Volver</a>
-        <a th:href="@{reservas/new}" class = "btn btn-primary">Añadir reserva</a>
+    
+         <!-- Botón para redirigir al formulario de creación de cliente -->
+         <a th:href="@{/crearReserva}" class="btn btn-primary" style="margin-bottom: 38px;">Crear reserva</a>
+    
     </div>
+
+
+<script src="/webjars/bootstrap/4.5.3/js/bootstrap.min.js"></script>
 </body>
 </html>

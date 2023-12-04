@@ -1,41 +1,55 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>checkOuts</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <title>Reservas</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
 </head>
 <body>
-    <div>
-        <h1>Lista de consumos</h1>
-        <table class="table table-hover table-bordered">
-            <thead class="thead-dark">
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+    <div class="container mt-3">
+        <h1>Consumos</h1>
+        
+        <table class="table">
+            <thead>
                 <tr>
-                    <th>ID habitación</th>
-                    <th>Tipo de servicio</th>
-                    <th>Descripción</th>
-                    <th>Costo</th>
-                    <th>Fecha consumo</th>
+                    <th>habitacion</th>
+                    <th>fechaConsumo</th>
+                    <th>Tipo Servicio</th>
+                    <th>Servicio</th>
                 </tr>
             </thead>
             <tbody>
-                <th:block th:each="consumo : ${consumos}">
-                    <tr>
-                        <td th:text="${consumo.pk.habitaciones_id.id}"></td>
-                        <td th:text="${consumo.pk.tiposservicio_tipo.tipo}"></td>
-                        <td th:text="${consumo.descripcion}"></td>
-                        <td th:text="${consumo.costo}"></td> 
-                        <td th:text="${consumo.pk.fecha_consumo}"></td>
-                    </tr>
-                </th:block>
+                <tr th:each="consumo: ${consumos}">
+                    <td th:text="${consumo.habitacion}"></td>
+                    <td th:text="${consumo.fechaConsumo}"></td>
+                    <td th:text="${consumo.tipoServicio.tipo}"></td>
+                    <td th:text="${consumo.tipoServicio.descripcion}"></td>
+                    <td th:text="${consumo.servicio.nombre}"></td>
+                    <td th:text="${consumo.servicio.precio}"></td>
+                    
+                    <td>
+    
+                        <!-- Botón para redirigir al formulario de la eliminacion del tipo -->
+                        <form th:action="@{/deleteConsumo}" method="post">
+                            <input type="hidden" name="id" th:value="${consumo.id}" />
+                            <button type="submit" class="btn btn-primary" style="background-color: red; border-color: red; margin-top: 10px;">Eliminar consumo</button>
+                        </form>
+                    </td>
+                </tr>
             </tbody>
         </table>
-        <a th:href="@{/}" class="btn btn-primary">Volver</a>
-        <a th:href="@{consumos/bar/new}" class = "btn btn-primary">Añadir producto de bar</a>
-        <a th:href="@{consumos/restaurante/new}" class = "btn btn-primary">Añadir producto de restaurante</a>
-        <a th:href="@{consumos/tienda/new}" class = "btn btn-primary">Añadir producto de tienda</a>
-        <a th:href="@{consumos/supermercado/new}" class = "btn btn-primary">Añadir producto de supermercado</a>
+    
+         <!-- Botón para redirigir al formulario de creación de cliente -->
+         <a th:href="@{/consumoForm}" class="btn btn-primary" style="margin-bottom: 38px;">Crear consumo</a>
+    
     </div>
+
+
+<script src="/webjars/bootstrap/4.5.3/js/bootstrap.min.js"></script>
 </body>
 </html>

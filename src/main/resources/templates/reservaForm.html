@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva reserva</title>
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Nueva reserva</h1>
+
+    <!-- Formulario de creación de TipoBebida -->
+<form th:action="@{/crearReservaNueva}" th:object="${nuevaReserva}" method="post">
+
+    <!-- Campo para el nombre del tipo de bebida -->
+    <label for="fechaEntrada">Fecha entrada:</label>
+    <input type="text" id="fechaEntrada" name="fechaEntrada" th:field="*{fechaEntrada}" required />
+
+    <label for="fechaSalida">Fecha salida:</label>
+    <input type="text" id="fechaSalida" name="fechaSalida" th:field="*{fechaSalida}" required />
+
+    <label for="numeroPersonas">numeroPersonas:</label>
+    <input type="text" id="numeroPersonas" name="numeroPersonas" th:field="*{numeroPersonas}" required />
+
+    <label class="col-form-label" for="habitacion">Habitación</label>
+        <select class="form-control" id="habitacion" name="habitacion" required>
+            <option th:each="habitacion : ${habitacionesDisponibles}" th:value="${habitacion.id}"
+                th:text="${habitacion.numero}"></option>
+        </select><br>
+
+        <label for="tipoDocumento">Tipo de documento:</label>
+        <select id="tipoDocumento" name="cliente.tipoDocumento" th:field="*{cliente.tipoDocumento}" required>
+            <option value="CC">Cédula de Ciudadanía</option>
+            <option value="CE">Cédula de Extranjería</option>
+            <option value="TI">Tarjeta de Identidad</option>
+            <option value="PA">Pasaporte</option>
+        </select>
+
+        <!-- Campo para el número de documento del cliente -->
+        <label for="numDocumento">Número de documento:</label>
+        <input type="text" id="numDocumento" name="cliente.numDocumento" th:field="*{cliente.numDocumento}" required />
+
+        <!-- Campo para el nombre del cliente -->
+        <label for="nombre">Nombre del cliente:</label>
+        <input type="text" id="nombre" name="cliente.nombre" th:field="*{cliente.nombre}" required />
+
+        <!-- Campo para el correo del cliente -->
+        <label for="correo">Correo del cliente:</label>
+        <input type="text" id="correo" name="cliente.correo" th:field="*{cliente.correo}" required />
+
+    <!-- Botón de envío -->
+    <button type="submit" class="btn btn-success">Crear Tipo de Bebida</button>
+</form>
+
+</div>
+
+</body>
+</html>

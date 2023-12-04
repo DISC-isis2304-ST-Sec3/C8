@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo consumo</title>
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Nuevo consumo</h1>
+
+    <!-- Formulario de creación de TipoBebida -->
+<form th:action="@{/crearConsumo}" th:object="${consumoNuevo}" method="post">
+
+    <!-- Campo para el nombre del tipo de bebida -->
+    <label class="col-form-label" for="habitacion">Habitación</label>
+    <select class="form-control" id="habitacion" name="habitacion" required>
+        <option th:each="habitacion : ${habitacionesDisponibles}" th:value="${habitacion.id}"
+            th:text="${habitacion.numero}"></option>
+    </select><br>
+
+    <label for="fechaConsumo">Fecha consumo:</label>
+    <input type="date" id="fechaConsumo" name="fechaConsumo" th:field="*{fechaConsumo}" required />
+
+    <label class="col-form-label" for="tipoServicio">Tipo Servicio</label>
+    <select class="form-control" id="tipoServicio" name="tipoServicio" required>
+        <option th:each="tipoServicio : ${tiposServicioDisponibles}" th:value="${tipoServicio.id}"
+            th:text="${tipoServicio.tipo}"></option>
+    </select><br>
+
+    <label class="col-form-label" for="servicio">servicio</label>
+    <select class="form-control" id="servicio" name="servicio" required>
+        <option th:each="servicio : ${serviciosDisponibles}" th:value="${servicio.id}"
+            th:text="${servicio.nombre + ' - ' + servicio.precio}"></option>
+    </select><br>
+     
+    <!-- Botón de envío -->
+    <button type="submit" class="btn btn-success">Crear consumo</button>
+</form>
+
+</div>
+
+</body>
+</html>

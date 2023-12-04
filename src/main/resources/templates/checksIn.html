@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checks In</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="~{navbar :: navbar}"></div>
+
+    <div class="container mt-3">
+        <h1>Checks In</h1>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>cliente num documento</th>
+                    <th>fechaEntrada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="checkIn: ${checksIn}">
+                    <td th:text="${checkIn.reserva}"></td>
+                    <td th:text="${checkIn.cliente}"></td>
+                    
+                    <td>
+                        <h5 th:text="${checkIn.fechaIngreso}"> </h5>
+    
+                        <!-- Botón para redirigir al formulario de la eliminacion del tipo -->
+                        <form th:action="@{/deleteCheckIn}" method="post">
+                            <input type="hidden" name="id" th:value="${checkIn.id}" />
+                            <button type="submit" class="btn btn-primary" style="background-color: red; border-color: red; margin-top: 10px;">Eliminar reserva</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    
+         <!-- Botón para redirigir al formulario de creación de cliente -->
+         <a th:href="@{/crearCheckIn}" class="btn btn-primary" style="margin-bottom: 38px;">Crear checkIn</a>
+    
+    </div>
+
+
+<script src="/webjars/bootstrap/4.5.3/js/bootstrap.min.js"></script>
+</body>
+</html>

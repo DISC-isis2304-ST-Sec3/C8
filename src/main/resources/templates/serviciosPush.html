@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear servicio</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+
+<body>
+    <br>
+    <div class="container border border-2" style="width: 30vw;">
+
+        <h1 class="text">Asociar servicio a tipoServicio</h1>
+
+        <form th:action="@{'serviciosPushGuardar'}" method="get">
+
+            <label class="col-form-label" for="id">Tipo servicio</label>
+            <select class="form-control" id="id" name="id" required>
+                <option th:each="tipoServicio : ${tiposServicio}" th:value="${tipoServicio.id}" th:text="${tipoServicio.tipo}"></option>
+            </select>
+            <br>
+            <div class="text-center">
+                <input type="submit" value="Guardar" class="btn btn-primary">
+                <a th:href="@{/servicios}" class="btn btn-primary">Cancelar</a>
+            </div>
+            </br>
+        </form>
+    </div>
+</body>
+
+</html>

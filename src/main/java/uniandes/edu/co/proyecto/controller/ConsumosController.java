@@ -1,111 +1,86 @@
+
 package uniandes.edu.co.proyecto.controller;
+import java.util.Optional;
 
-import java.sql.Date;
+import javax.swing.text.html.Option;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import uniandes.edu.co.proyecto.modelo.Consumos;
-import uniandes.edu.co.proyecto.repositorio.ConsumosRepository;
-import uniandes.edu.co.proyecto.repositorio.HabitacionesRepository;
+
+import uniandes.edu.co.proyecto.modelo.Consumo;
+import uniandes.edu.co.proyecto.modelo.Servicio;
+import uniandes.edu.co.proyecto.modelo.TipoServicio;
+import uniandes.edu.co.proyecto.repositorio.ConsumoRepository;
+import uniandes.edu.co.proyecto.repositorio.HabitacionRepository;
+import uniandes.edu.co.proyecto.repositorio.ServicioRepository;
+import uniandes.edu.co.proyecto.repositorio.TipoServicioRepository;
+
+
+
 
 @Controller
 public class ConsumosController {
-    
+
     @Autowired
-    private ConsumosRepository consumosRepository;
-    
+    private ConsumoRepository consumoRepository;
+
     @Autowired
-    private HabitacionesRepository habitacionesRepository;
+    private TipoServicioRepository tipoServicioRepository;
+
+    @Autowired
+    private HabitacionRepository habitacionRepository;
+
+    @Autowired
+    private ServicioRepository servicioRepository;
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
+
+    @GetMapping("/consumoForm")
+    public String crearConsumo(Model model) {
+        model.addAttribute("habitacionesDisponibles", habitacionRepository.findAll());
+        model.addAttribute("tiposServicioDisponibles", tipoServicioRepository.findAll());
+        model.addAttribute("serviciosDisponibles", servicioRepository.findAll());
+        model.addAttribute("consumoNuevo", new Consumo());
+        return "consumoForm";
+    }
+
+    @PostMapping("/crearConsumo")
+    public String crearConsumo(@ModelAttribute("consumoNuevo") Consumo consumo) {
+    TipoServicio tipoServicio = new TipoServicio(consumo.getTipoServicio().getTipo(), consumo.getTipoServicio().getDescripcion());
+    tipoServicioRepository.save(tipoServicio);
+    Servicio servicio = new Servicio(consumo.getServicio().getNombre(), consumo.getServicio().getPrecio());
+    servicioRepository.save(servicio);
+    consumo.setTipoServicio(consumo.getTipoServicio());
+    consumo.setServicio(consumo.getServicio());
+    consumoRepository.save(consumo);
+    return "redirect:/consumos";
+}
 
     @GetMapping("/consumos")
-    public String consumos(Model model) {
-        model.addAttribute("consumos", consumosRepository.darConsumos());
+    public String obtenerTodosLosConsumos(Model model) {
+        model.addAttribute("consumos", consumoRepository.findAll());
         return "consumos";
+    } 
+
+    @PostMapping("/deleteConsumo")
+    public String eliminarConsumo(@RequestParam(name = "id", required = false) String id) {
+        consumoRepository.deleteById(id);
+        return "redirect:/consumos";
     }
 
-    @GetMapping("/consumos/bar/new")
-    public String consumosFormBar(Model model) {
-        model.addAttribute("consumos", new Consumos());
-        model.addAttribute("habitaciones", habitacionesRepository.darHabitaciones());
-        model.addAttribute("tipoServ", "bar");
-        model.addAttribute("productos", consumosRepository.darproductoBar());
-        return "consumosNuevo";
-    }
-
-    @GetMapping("/consumos/supermercado/new")
-    public String consumosFormSuper(Model model) {
-        model.addAttribute("consumos", new Consumos());
-        model.addAttribute("habitaciones", habitacionesRepository.darHabitaciones());
-        model.addAttribute("tipoServ", "supermercado");
-        model.addAttribute("productos", consumosRepository.darproductoSuper());
-        return "consumosNuevo";
-    }
-
-    @GetMapping("/consumos/restaurante/new")
-    public String consumosFormRest(Model model) {
-        model.addAttribute("consumos", new Consumos());
-        model.addAttribute("habitaciones", habitacionesRepository.darHabitaciones());
-        model.addAttribute("tipoServ", "restaurante");
-        model.addAttribute("productos", consumosRepository.darproductoRestaurante());
-        return "consumosNuevo";
-    }
-
-    @GetMapping("/consumos/tienda/new")
-    public String consumosFormTienda(Model model) {
-        model.addAttribute("consumos", new Consumos());
-        model.addAttribute("habitaciones", habitacionesRepository.darHabitaciones());
-        model.addAttribute("tipoServ", "tienda");
-        model.addAttribute("productos", consumosRepository.darproductoTienda());
-        return "consumosNuevo";
-    }
-    
-    @PostMapping("/consumos/bar/new/save") 
-    public String consumosbarGuardar(@RequestParam(value = "idHab") int idHab,
-    @ModelAttribute("tipoServ") String tipoServ, @RequestParam( value = "descripcion") String descripcion, @RequestParam(value = "nombreProd") String nombreProd, @RequestParam(value = "fecha_consumo") Date fecha_consumo ){ 
-        Double costo = consumosRepository.darPrecioBar(nombreProd);
-        tipoServ = "bar";
-        consumosRepository.insertarConsumo(idHab, tipoServ, descripcion, costo, fecha_consumo);
-        return "redirect:/consumos";
-    }
-    
-    @PostMapping("/consumos/restaurante/new/save") 
-    public String consumosresGuardar(@RequestParam(value = "idHab") int idHab,
-    @ModelAttribute("tipoServ") String tipoServ, @RequestParam( value = "descripcion") String descripcion, @RequestParam(value = "nombreProd") String nombreProd, @RequestParam(value = "fecha_consumo") Date fecha_consumo ){ 
-        Double costo = consumosRepository.darPrecioRestaurante(nombreProd);
-        tipoServ = "restaurante";
-        consumosRepository.insertarConsumo(idHab, tipoServ, descripcion, costo, fecha_consumo);
-        return "redirect:/consumos";
-    }
-    
-    @PostMapping("/consumos/tienda/new/save") 
-    public String consumostiendaGuardar(@RequestParam(value = "idHab") int idHab,
-    @ModelAttribute("tipoServ") String tipoServ, @RequestParam( value = "descripcion") String descripcion, @RequestParam(value = "nombreProd") String nombreProd, @RequestParam(value = "fecha_consumo") Date fecha_consumo ){ 
-        Double costo = consumosRepository.darPrecioTienda(nombreProd);
-        tipoServ = "tienda";
-        consumosRepository.insertarConsumo(idHab, tipoServ, descripcion, costo, fecha_consumo);
-        return "redirect:/consumos";
-    }
-    
-    @PostMapping("/consumos/supermercado/new/save") 
-    public String consumossuperGuardar(@RequestParam(value = "idHab") int idHab,
-    @ModelAttribute("tipoServ") String tipoServ, @RequestParam( value = "descripcion") String descripcion, @RequestParam(value = "nombreProd") String nombreProd, @RequestParam(value = "fecha_consumo") Date fecha_consumo ){ 
-        Double costo = consumosRepository.darPrecioSuper(nombreProd);
-        tipoServ = "supermercado";
-        consumosRepository.insertarConsumo(idHab, tipoServ, descripcion, costo, fecha_consumo);
-        return "redirect:/consumos";
-    }
-    
-    
-    @GetMapping("/consumos/{idHab}/delete")
-    public String consumosEliminar(@PathVariable("idHab") int idHab) {
-        consumosRepository.eliminarConsumo(idHab);
-        return "redirect:/consumos";
-    }
 }

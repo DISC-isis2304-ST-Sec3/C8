@@ -1,43 +1,52 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tipos Habitacion</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <title>Tipos habitacion</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
 </head>
 <body>
-    <div>
-        <h1>Lista de tipos de habitación</h1>
-        <table class="table table-hover table-bordered">
-            <thead class="thead-dark">
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+    <div class="container mt-3">
+        <h1>Tipos habitacion</h1>
+        
+        <table class="table">
+            <thead>
                 <tr>
                     <th>Tipo</th>
                     <th>Jacuzzi</th>
-                    <th>Cocina</th>
                     <th>Comedor</th>
-                    <th>Acciones</th>
+                    <th>Cocina</th>
                 </tr>
             </thead>
             <tbody>
-                <th:block th:each="tiposHabitacion : ${tiposHabitacion}">
-                    <tr>
-                        <td th:text="${tiposHabitacion.tipo}"></td>
-                        <td th:text="${tiposHabitacion.jacuzzi}"></td>
-                        <td th:text="${tiposHabitacion.cocina}"></td>
-                        <td th:text="${tiposHabitacion.comedor}"></td>
-                        <td>
-                            <a th:href="@{'/tiposHabitacion/' + ${tiposHabitacion.tipo} +  '/edit'}"
-                               >Editar</a>
-                            <a th:href="@{'/tiposHabitacion/' + ${tiposHabitacion.tipo} + '/delete'}"
-                               onclick="return confirm('¿Está seguro de borrar el tipo?')">Eliminar</a>
-                        </td>
-                    </tr>
-                </th:block>
+                <tr th:each="tipoHabitacion: ${tiposHabitacion}">
+                    <td th:text="${tipoHabitacion.tipo}"></td>
+                    <td th:text="${tipoHabitacion.jacuzzi}"></td>
+                    <td th:text="${tipoHabitacion.comedor}"></td>
+                    <td>
+                        <h5 th:text="${tipoHabitacion.cocina}"> </h5>
+    
+                        <!-- Botón para redirigir al formulario de la eliminacion del tipo -->
+                        <form th:action="@{/deleteTipoHabitacion}" method="post">
+                            <input type="hidden" name="id" th:value="${tipoHabitacion.id}" />
+                            <button type="submit" class="btn btn-primary" style="background-color: red; border-color: red; margin-top: 10px;">Eliminar tipo</button>
+                        </form>
+                    </td>
+                </tr>
             </tbody>
         </table>
-        <a th:href="@{/}" class="btn btn-primary">Volver</a>
-        <a th:href="@{tiposHabitacion/new}" class = "btn btn-primary">Añadir tipo de habitación</a>
+    
+         <!-- Botón para redirigir al formulario de creación de cliente -->
+         <a th:href="@{/crearTipoHabitacion}" class="btn btn-primary" style="margin-bottom: 38px;">Crear tipo habitacion</a>
+    
     </div>
+
+
+<script src="/webjars/bootstrap/4.5.3/js/bootstrap.min.js"></script>
 </body>
 </html>

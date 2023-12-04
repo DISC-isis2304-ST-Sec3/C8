@@ -1,123 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hotel de los Andes</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotelAndes MongoDB</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
     <style>
-        .custom-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            margin-top: 50px;
+        body {
+            margin: 0;
+            font-family: 'Merriweather Sans', sans-serif;
         }
 
-        /* Oculta los botones al inicio */
-        #buttons-admin, #buttons-client, #buttons-receptionist, #buttons-employee {
-            display: none;
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            z-index: 100; /* Asegura que el navbar esté por encima del contenido */
+            width:auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
         }
+
+        nav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        @media screen and (max-width: 800px) {
+            nav a {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+
+        .contenido {
+            padding: 16px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+            height: 160px;
+            box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-image {
+            display: block;
+            margin: 0 auto; /* Centra la imagen horizontalmente */
+            max-width: 100px;
+            height: auto;
+            float: left; /* Alinea la imagen a la izquierda */
+            margin-right: 20px; /* Agrega un margen a la derecha de la imagen para separar del texto */
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.8));
+            
+        }
+
+        .footer-image:hover {
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.8)) brightness(1.2); /* Brillo al hacer hover */
+        }
+        
     </style>
 </head>
 <body>
-    <div class="container custom-container">
-        <h1>Hotel de los Andes</h1>
-        <h3>Bienvenidos!</h3>
-        <img th:src="@{/images/A.png}" width="350" alt="logo">
+        <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
 
-        <select id="userType" onchange="toggleButtons()">
-            <option >   ---   </option>
-            <option value="admin">Administrador</option>
-            <option value="gerenteG">Gerente general</option>
-            <option value="client">Cliente</option>
-            <option value="receptionist">Recepcionista</option>
-            <option value="gerente">Gerente</option>
-            <option value="employee">Empleado</option>
-        </select>
+    <div class="row" style="margin-top: 40px;">
+        <label class="col-md-6 control-label">
+            <img src="https://github.com/JuanCoronel70/el-salvador-violencia/blob/main/DALL%C2%B7E%202023-11-14%2019.31.10%20-%203d%20render%20of%20a%20drink%20with%20a%20green%20leaf,%204k.png?raw=true&cache=1" alt="" style="height: 600px;width: 600px; margin-left: 10px;" loading="lazy">
+        </label>
 
-        <div class="mt-4" id="buttons-admin">
-            <a th:href="@{/tiposUsuario}" class="btn btn-primary btn-block mb-2">Tipos de usuario</a>
-            <a th:href="@{/usuarios}" class="btn btn-primary btn-block">Usuarios</a>
-            <a th:href="@{/tiposHabitacion}" class="btn btn-primary btn-block">Tipos de habitación</a>
-            <a th:href="@{/habitaciones}" class="btn btn-primary btn-block">Habitaciones</a>
-            <a th:href="@{/planesConsumo}" class="btn btn-primary btn-block">Planes de consumo</a>
-            <a th:href="@{/tiposServicio}" class="btn btn-primary btn-block">Tipos de servicio</a>
-        </div>
-
-        <div class="mt-4" id="buttons-gerenteG">
-            <a th:href="@{/rfc11}" class="btn btn-primary btn-block">RFC11</a>
-            <a th:href="@{/rfc12}" class="btn btn-primary btn-block">RFC12</a>
-        </div>
+        <label class="col-md-6 control-label">
+            <h1 style="font-size: 120px; text-align:start;"> HotelAndes + MongoDB </h1>
+        </label>
         
-        <div class="mt-4" id="buttons-client">
-            <a th:href="@{/reservas}" class="btn btn-primary btn-block">Reservas</a>
-            <a th:href="@{/reservasServicio}" class="btn btn-primary btn-block">Reservas de servicio</a>
-        </div>
-
-        <div class="mt-4" id="buttons-receptionist">
-            <a th:href="@{/checkOuts}" class="btn btn-primary btn-block">checkOuts</a>
-            <a th:href="@{/rfc9}" class="btn btn-primary btn-block">RFC9</a>
-            <a th:href="@{/rfc10}" class="btn btn-primary btn-block">RFC10</a>
-        </div>
-
-        <div class="mt-4" id="buttons-gerente">
-            <a th:href="@{/reservas}" class="btn btn-primary btn-block">Reservas</a>
-            <a th:href="@{/reservasServicio}" class="btn btn-primary btn-block">Reservas de servicio</a>
-            <a th:href="@{/rfc9}" class="btn btn-primary btn-block">RFC9</a>
-            <a th:href="@{/rfc10}" class="btn btn-primary btn-block">RFC10</a>
-        </div>
-        
-        <div class="mt-4" id="buttons-employee">
-            <a th:href="@{/consumos}" class="btn btn-primary btn-block">Consumos</a>
-            <a th:href="@{/rfc1}" class="btn btn-primary btn-block">RFC1</a>
-            <a th:href="@{/rfc2}" class="btn btn-primary btn-block">RFC2</a>
-            <a th:href="@{/rfc3}" class="btn btn-primary btn-block">RFC3</a>
-            <a th:href="@{/rfc5}" class="btn btn-primary btn-block">RFC5</a>
-            <a th:href="@{/rfc6}" class="btn btn-primary btn-block">RFC6</a>
-            <a th:href="@{/rfc7}" class="btn btn-primary btn-block">RFC7</a>
-            <a th:href="@{/rfc8}" class="btn btn-primary btn-block">RFC8</a>
-        </div>
-
     </div>
 
-    <script>
-        function toggleButtons() {
-        var userType = document.getElementById("userType").value;
+    <footer>
+        <img src="https://github.com/JuanCoronel70/el-salvador-violencia/blob/main/79f258dcebe9f4539ec8a18928973e86-removebg-preview.png?raw=true&cache=1" alt="Logo" class="footer-image" loading="lazy">
+        <p style="text-align: right; margin-top: 100px;">@Universidad de los Andes - DISC - Sistemas Transaccionales (2023-02)</p>
+    </footer>
 
-        document.getElementById("buttons-admin").style.display = "none";
-        document.getElementById("buttons-gerenteG").style.display = "none";
-        document.getElementById("buttons-client").style.display = "none";
-        document.getElementById("buttons-receptionist").style.display = "none";
-        document.getElementById("buttons-gerente").style.display = "none";
-
-        if (userType === "admin") {
-            document.getElementById("buttons-admin").style.display = "block";
-        } else if (userType === "gerenteG") {
-            document.getElementById("buttons-gerenteG").style.display = "block";
-        } else if (userType === "client") {
-            document.getElementById("buttons-client").style.display = "block";
-        } else if (userType === "receptionist") {
-            document.getElementById("buttons-receptionist").style.display = "block";
-        } else if (userType === "gerente") {
-            document.getElementById("buttons-gerente").style.display = "block";
-        } else if (userType === "employee") {
-            document.getElementById("buttons-employee").style.display = "block";
-        } else {
-            document.getElementById("buttons-admin").style.display = "none";
-            document.getElementById("buttons-gerenteG").style.display = "none";
-            document.getElementById("buttons-client").style.display = "none";
-            document.getElementById("buttons-receptionist").style.display = "none";
-            document.getElementById("buttons-gerente").style.display = "none";
-            document.getElementById("buttons-employee").style.display = "none";
-    }
-    window.onload = toggleButtons;
-}
-
-    </script>
+<script src="/webjars/bootstrap/4.5.3/js/bootstrap.min.js"></script>
 </body>
 </html>

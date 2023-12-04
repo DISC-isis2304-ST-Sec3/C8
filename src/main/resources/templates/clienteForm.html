@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo cliente</title>
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Nuevo cliente</h1>
+
+    <!-- Formulario de creación de TipoBebida -->
+    <form th:action="@{/crearClienteNuevo}" th:object="${clienteNuevo}" method="post">
+
+    <!-- Campo para el tipo de documento del cliente -->
+        <label for="tipoDocumento">Tipo de documento:</label>
+        <select id="tipoDocumento" name="tipoDocumento" th:field="*{tipoDocumento}" required>
+            <option value="CC">Cédula de Ciudadanía</option>
+            <option value="CE">Cédula de Extranjería</option>
+            <option value="TI">Tarjeta de Identidad</option>
+            <option value="PA">Pasaporte</option>
+        </select>
+
+        <!-- Campo para el número de documento del cliente -->
+        <label for="numDocumento">Número de documento:</label>
+        <input type="text" id="numDocumento" name="numDocumento" th:field="*{numDocumento}" required />
+
+        <!-- Campo para el nombre del cliente -->
+        <label for="nombre">Nombre del cliente:</label>
+        <input type="text" id="nombre" name="nombre" th:field="*{nombre}" required />
+
+        <!-- Campo para el correo del cliente -->
+        <label for="correo">Correo del cliente:</label>
+        <input type="text" id="correo" name="correo" th:field="*{correo}" required />
+
+        <!-- Botón de envío -->
+        <button type="submit" class="btn btn-success">Crear cliente</button>
+    </form>
+
+</div>
+
+</body>
+</html>

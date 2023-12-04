@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo tipo habitacion</title>
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Nuevo tipo habitacion</h1>
+
+    <!-- Formulario de creación de TipoBebida -->
+    <form th:action="@{/crearTipoHabitacionNuevo}" th:object="${tipoHabitacionNuevo}" method="post">
+
+        <label for="tipo">Tipo:</label>
+        <input type="text" id="tipo" name="tipo" th:field="*{tipo}" required />
+
+    <!-- Campo para el tipo de documento del cliente -->
+        <label for="jacuzzi">Jacuzzi:</label>
+        <select id="jacuzzi" name="jacuzzi" th:field="*{jacuzzi}" required>
+            <option value="True">Si</option>
+            <option value="False">No</option>
+        </select>
+
+        <label for="comedor">Comedor:</label>
+        <select id="comedor" name="comedor" th:field="*{comedor}" required>
+            <option value="True">Si</option>
+            <option value="False">No</option>
+        </select>
+
+        <label for="cocina">Comedor:</label>
+        <select id="cocina" name="cocina" th:field="*{cocina}" required>
+            <option value="True">Si</option>
+            <option value="False">No</option>
+        </select>
+
+
+        <!-- Botón de envío -->
+        <button type="submit" class="btn btn-success">Crear tipo habitacion</button>
+    </form>
+
+</div>
+
+</body>
+</html>

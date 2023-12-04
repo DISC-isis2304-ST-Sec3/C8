@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Check In</title>
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="~{navbar :: navbar}"></div>
+
+<div class="container mt-3">
+    <h1>Nuevo Check In</h1>
+
+    <!-- Formulario de creación de TipoBebida -->
+<form th:action="@{/crearCheckInNuevo}" th:object="${nuevoCheckIn}" method="post">
+
+    <label class="col-form-label" for="reserva">Cliente</label>
+        <select class="form-control" id="reserva" name="reserva" required>
+            <option th:each="reserva : ${reservasDisponibles}" th:value="${reserva.id}"
+                th:text="${reserva.cliente.numDocumento + ' - ' + #dates.format(reserva.fechaEntrada, 'yyyy-MM-dd')}"></option>
+        </select><br>
+
+    <label class="col-form-label" for="cliente">Cliente</label>
+        <select class="form-control" id="cliente" name="cliente" required>
+            <option th:each="cliente : ${clientesDisponibles}" th:value="${cliente.id}"
+                th:text="${cliente.tipoDocumento + ' - ' +cliente.numDocumento}"></option>
+        </select><br>
+    <!-- Campo para el nombre del tipo de bebida -->
+    <label for="fechaIngreso">fechaIngreso:</label>
+    <input type="date" id="fechaIngreso" name="fechaIngreso" th:field="*{fechaIngreso}" required />
+    <!-- Botón de envío -->
+    <button type="submit" class="btn btn-success">Crear Check In</button>
+</form>
+
+</div>
+
+</body>
+</html>

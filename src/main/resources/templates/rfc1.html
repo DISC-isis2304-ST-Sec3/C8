@@ -1,32 +1,38 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DineroRecolectado</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <title>RFC1</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
 </head>
 <body>
-    <div>
-        <h5>Mostrar el dinero recolectado por servicios en cada habitación en el último año corrido.</h5>
-        <table class="table table-hover table-bordered">
-            <thead class="thead-dark">
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+    <div class="container mt-3">
+        <h1>RFC1</h1>
+        
+        <table class="table">
+            <thead>
                 <tr>
-                    <th>Id de habitación</th>
-                    <th>Costo total de servicios consumidos en el último año</th>
+                    <th>Habitacion</th>
+                    <th>Total</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="Costo : ${Costos}">
-                    <td th:text="${Costo[0]}"></td>
-                    <td th:text="${Costo[1]}"></td>
+                <tr th:each="consumo: ${rfc1}">
+                    <td th:text="${consumo.habitacion}"></td>
+                    <td th:text="${consumo.totalDinero}"></td>
                 </tr>
             </tbody>
         </table>
-        <h5 th:text="${'Tiempo: ' + Tiempo}"></h5>
-        <a th:href="@{/}" class="btn btn-primary">Volver</a>
+    
+         <!-- Botón para redirigir al formulario de creación de cliente -->
     </div>
+
+
+<script src="/webjars/bootstrap/4.5.3/js/bootstrap.min.js"></script>
 </body>
-</html>  
-
-
+</html>
