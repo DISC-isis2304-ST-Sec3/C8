@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="33B90466-FCC3-2D68-0992-376CDBD2C176" name="Reservan">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:47:49 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Habitaciones_id" id="BC34E00E-F066-E896-50AD-B31866D1606B">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:47:49 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="422C4840-4CD7-209F-7110-AB950DAA7513" referredColumn="03F4E05D-A111-B338-739A-C9EF42EBBB29"/>
+</associations>
+</Column>
+<Column name="Reservas_id" id="404BDEF6-AD7A-273B-7411-254714112890">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:47:49 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="36C8D23B-4759-9724-5E9A-76C1D959B303" referredColumn="A3A0DD51-AB50-88EF-BFF0-B2AFB8A4F670"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ADF41DD2-B2AA-8BEA-6873-E9B82D4C1239" name="Reservan_PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:47:49 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC34E00E-F066-E896-50AD-B31866D1606B"/>
+<colUsage columnID="404BDEF6-AD7A-273B-7411-254714112890"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2C23094A-2DA7-172C-0B37-FA1FEF0F95A1" name="Reservan_Habitaciones_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:47:49 UTC</createdTime>
+<generatorID>85CA7017-8924-0675-CCCE-56DB61694616</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC34E00E-F066-E896-50AD-B31866D1606B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="540C27A3-58CF-367F-5FFA-D3317CDCA780" name="Reservan_Reservas_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>85CA7017-8924-0675-CCCE-56DB61694616</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="404BDEF6-AD7A-273B-7411-254714112890"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

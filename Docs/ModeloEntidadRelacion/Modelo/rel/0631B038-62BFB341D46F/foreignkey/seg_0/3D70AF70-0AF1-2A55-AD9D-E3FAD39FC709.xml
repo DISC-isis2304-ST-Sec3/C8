@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3D70AF70-0AF1-2A55-AD9D-E3FAD39FC709" containerWithKeyObject="0B01F26E-87B3-A2DE-95DF-56FE40BD6443" localFKIndex="CC883EAD-4B08-9C8F-4A1C-13964BF4B1CC" name="VendenSuper_Supermercados_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>0AD0727A-B242-C43D-7231-66E26896035B</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<referredTableLongName>Supermercados</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>B0C0AC05-A448-A788-A2BB-3D0498260ED6</referredTableID>
+<keyObject>1B057C32-652A-97E0-BA68-682AA8649E70</keyObject>
+<referredKeyID>1B057C32-652A-97E0-BA68-682AA8649E70</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

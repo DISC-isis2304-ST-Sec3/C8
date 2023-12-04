@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A39A0B6F-B39A-05F8-D86F-DE2BEB65EE99" name="Habitaciones">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:46:22 UTC</createdTime>
+<generatorID>787389DF-1694-5501-C200-369555E9C414</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="03F4E05D-A111-B338-739A-C9EF42EBBB29">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:46:22 UTC</createdTime>
+<generatorID>6DE51B26-EDA3-2CA3-0358-874A2732DB3A</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capacidad" id="CDBB14D4-DADF-030B-BB2A-41FEC0713B3A">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:46:22 UTC</createdTime>
+<generatorID>F2264E6D-28BE-B389-C459-931FF57EC36E</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="costo" id="4C12176C-046A-6005-37E5-20CE80EF1555">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:46:22 UTC</createdTime>
+<generatorID>15D4C630-8E3E-C204-B8D4-B4A41423671A</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TiposHabitacion_tipo" id="670042F5-CE3A-2A4B-E5A3-C662F3F79026">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:46:22 UTC</createdTime>
+<generatorID>95C69163-BF7E-E5C9-BB13-7E7F1F1A8F4D</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="48614BFA-6DEB-762B-57C5-7DED141EC9DE" referredColumn="CED4488A-0BAE-BF7E-785E-B7A22F4E3E0A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="24067557-4372-2472-B84F-34296BAB936A" name="Habitaciones_PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:46:22 UTC</createdTime>
+<generatorID>FDC78ECA-FDBD-F78F-FB75-E983A0A2FA27</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="03F4E05D-A111-B338-739A-C9EF42EBBB29"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C8B29EC2-377D-5195-96FF-88D049DCA182" name="Habitaciones_TiposHabitacion_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:46:22 UTC</createdTime>
+<generatorID>32AFAD5B-9C92-A133-5AF9-7240F25BC4E7</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="670042F5-CE3A-2A4B-E5A3-C662F3F79026"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

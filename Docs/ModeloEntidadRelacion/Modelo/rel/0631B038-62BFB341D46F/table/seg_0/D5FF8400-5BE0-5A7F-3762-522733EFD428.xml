@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D5FF8400-5BE0-5A7F-3762-522733EFD428" name="SalonesReunion">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>1741A557-2C9F-AD95-C382-F0DC8EAB954D</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="B354A8C4-EE9D-4A46-8354-89B46AFC61E6">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>F56E8B1C-45EB-F6C5-C4F4-B4BEEBFA598D</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capacidad" id="8854E2A2-955A-F4C5-297B-A62AFEE112C2">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>232E1BDE-D0EA-3EB2-0590-D71425A0E132</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<constraintName>CK_capacidad</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>12</endValue>
+<description>capacidad</description>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="costo_hora" id="72310884-532C-3AEB-EA2D-7CA975F845EB">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>FFC4FA93-72E7-C402-EE06-1042BA9351C2</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TiposServicio_tipo" id="815A28B9-79EF-29F6-B915-B86F6D2185C6">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>CFD6EF81-BDC9-BFC9-EBE1-3A4AC72A931E</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EFE2EC49-E7B9-A655-E9A4-83B78089DBE6" referredColumn="56212C40-C77F-DF72-CD68-35418810E2A7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="04F58C39-B62D-9194-BB8A-88FA065DB3EC" name="SalonesReunion_PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>14526B22-933B-FD67-684F-AE9E026E76BF</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B354A8C4-EE9D-4A46-8354-89B46AFC61E6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BF5F2913-B111-7814-9A20-82509AD50EE2" name="SalonesReunion_TiposServicio_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>AC8DC1FD-0D0F-CFE9-3B48-C5821F27D3DE</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="815A28B9-79EF-29F6-B915-B86F6D2185C6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AC5A5C91-225F-13EA-3DDC-D53180B7A1CF" name="Sirven_bar">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Bares_id" id="87FD227C-B398-1CFA-3F87-9AFC90624DF0">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AD9F1E03-1F98-A548-4D0F-00CB307E306F" referredColumn="90705DB7-C94A-5A4C-1382-C7677DE1C59C"/>
+</associations>
+</Column>
+<Column name="ProductosBar_id" id="8C189D08-E30E-F2EE-6A28-10EA0B206F51">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="40B2CF6F-AD9D-7085-2B26-EBF00BEBBFEB" referredColumn="029FD0E9-277E-BB57-EED2-FA857ED48F32"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="34CA4E43-2A47-0FAE-E25C-F9D1B041576C" name="Sirven_bar_PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87FD227C-B398-1CFA-3F87-9AFC90624DF0"/>
+<colUsage columnID="8C189D08-E30E-F2EE-6A28-10EA0B206F51"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="38C1183B-E43E-8AE5-D79C-4AD147CF3D7F" name="Sirven_bar_Bares_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>AB1F1915-3840-7C57-255F-B687558F8F33</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87FD227C-B398-1CFA-3F87-9AFC90624DF0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="10D61370-F9B8-B388-C59E-7D774CD36448" name="Sirven_bar_ProductosBar_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>AB1F1915-3840-7C57-255F-B687558F8F33</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8C189D08-E30E-F2EE-6A28-10EA0B206F51"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="habitaciones" directorySegmentName="seg_0" id="32AFAD5B-9C92-A133-5AF9-7240F25BC4E7">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 01:44:22 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<sourcePk>E12BAC6B-CF41-2D6E-D8EC-CC3654111EAD</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>D3D6C65C-0D1D-32E9-55DD-21BCE3377776</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>787389DF-1694-5501-C200-369555E9C414</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

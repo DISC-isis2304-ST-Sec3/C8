@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="planReserva" directorySegmentName="seg_0" id="71FAFAD0-FD26-E8D4-7D35-C880DEA61BE2">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:09:16 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<sourcePk>A16C91A2-9CA4-4120-9CFF-01AEE3179012</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>BCDD1F3B-C2C2-09C3-9FB3-0408E761E706</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>8EBC0F20-545E-ED12-47C4-74323D16702C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

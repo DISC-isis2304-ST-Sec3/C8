@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E34C9861-03AF-FA56-5777-6B0E671D1F4C" name="ReservasSalonReunion">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ReservasServicio_id" id="B94561DD-4682-6FCB-9DDD-FA773F60F930">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6A4F4E28-4C05-8782-CFC7-E9121A0353E0" referredColumn="EEEF86C7-88E4-990C-651D-8B740FDA7664"/>
+</associations>
+</Column>
+<Column name="SalonesReunion_id" id="D42DC501-93E4-51CA-D408-321385875C9F">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="96DEA37F-35FB-CBA2-5647-321362F2848F" referredColumn="B354A8C4-EE9D-4A46-8354-89B46AFC61E6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BBF47C69-4A43-E71C-FCC7-5DC26B63AC69" name="ReservasSalonReunion_PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B94561DD-4682-6FCB-9DDD-FA773F60F930"/>
+<colUsage columnID="D42DC501-93E4-51CA-D408-321385875C9F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E95CC14B-C099-B01E-3754-016CB83739DD" name="ReservasSalonReunion_ReservasServicio_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>199A2061-D309-B804-48DB-4B9786771D97</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B94561DD-4682-6FCB-9DDD-FA773F60F930"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="984E49A9-BBF3-40C5-A17E-5A4C0DE860F3" name="ReservasSalonReunion_SalonesReunion_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>199A2061-D309-B804-48DB-4B9786771D97</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D42DC501-93E4-51CA-D408-321385875C9F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

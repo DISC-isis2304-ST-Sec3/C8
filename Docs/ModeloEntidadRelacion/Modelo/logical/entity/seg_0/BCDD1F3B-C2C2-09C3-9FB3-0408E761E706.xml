@@ -1,0 +1,160 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BCDD1F3B-C2C2-09C3-9FB3-0408E761E706" name="PlanesConsumo">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:03:02 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="A00B3458-6238-C47E-1103-016D928F79C1">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:03:12 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="F33ED2D6-FE8F-4BF4-6122-87EC021A54EE">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:03:24 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="estadia_min" id="95A1F746-7AF3-3204-1916-942A9112F050">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:03:36 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="costo" id="4767C580-BEB6-9A27-13AE-DFCAF5DB080E">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:05:13 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="desc_reserva" id="622CEBD5-9916-D869-FFD2-E91324681750">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:06:16 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>1</endValue>
+</rangeDef>
+</listOfRanges>
+</Attribute>
+<Attribute name="desc_bar" id="EB1F4005-FF3B-11A6-7081-35C61EFEA9CC">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:05:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>1</endValue>
+</rangeDef>
+</listOfRanges>
+</Attribute>
+<Attribute name="desc_restaurante" id="8E03E203-F809-7CF1-A457-5FF0FB07C3CF">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:07:22 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>1</endValue>
+</rangeDef>
+</listOfRanges>
+</Attribute>
+<Attribute name="desc_servicio" id="7B4FEB24-814D-0DB0-346E-EC70390FE062">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:08:02 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>1</endValue>
+</rangeDef>
+</listOfRanges>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A16C91A2-9CA4-4120-9CFF-01AEE3179012" name="PlanesConsumo PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:03:23 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A00B3458-6238-C47E-1103-016D928F79C1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

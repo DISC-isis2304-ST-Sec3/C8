@@ -1,0 +1,179 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B152C87F-89E9-1334-CDD9-795B232FE441" name="Reservas">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>8EBC0F20-545E-ED12-47C4-74323D16702C</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="A3A0DD51-AB50-88EF-BFF0-B2AFB8A4F670">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>337CC9DB-305D-472D-961F-85AC3BEAF07D</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_inicio" id="6D97EC56-CCCD-8DAD-BD03-D33C260F5C8E">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>25B1A2EF-B8C0-4A7A-9F4A-BC335BDE8843</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_salida" id="76491A62-9096-4F9F-E3D9-A91AC362A2EB">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>EB82E17B-D811-994D-5839-27DFDE1AC166</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="num_personas" id="D99C3CF5-3449-B5CD-36C4-B6E7FAD30B91">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>EE67BE10-B473-1916-BF84-B40DF33D3B9F</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>100</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="Usuarios_num_documento" id="627167C2-C763-EB05-ED24-CCD3B0E28561">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>6E4CD351-E1A6-D48D-69D4-21FD0C702681</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="25B3C013-0B5A-AFC1-36B8-9B926808B732" referredColumn="D684B0F4-6E2B-8477-C30E-62115138A0B5"/>
+</associations>
+</Column>
+<Column name="Usuarios_correo" id="F056ECAA-C2B7-BC55-72A4-F73F0D4EC7C2">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>360ECB1C-00AA-8517-E7CE-4C71B3ECD1A6</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="25B3C013-0B5A-AFC1-36B8-9B926808B732" referredColumn="08607250-0A70-9C1A-21C0-3B423A5E0522"/>
+</associations>
+</Column>
+<Column name="Usuarios_nombre" id="7C803689-258F-24AA-60ED-7F833D98AB81">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>7AA37517-0E07-3194-1EB2-2AEA9FDD4E2B</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="25B3C013-0B5A-AFC1-36B8-9B926808B732" referredColumn="C0952387-A194-41E1-94EB-A94A22AA4EC4"/>
+</associations>
+</Column>
+<Column name="PlanesConsumo_id" id="12F67D97-A4CD-DC82-4349-FBD89B3F3E83">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>E4636BE0-1700-2FAD-E96F-5549FFA0104D</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="42AE172E-011D-607B-9DE8-103AEE07857F" referredColumn="4C0159E4-1218-5E03-18D8-6E2E6C624294"/>
+</associations>
+</Column>
+<Column name="Usuarios_tipo_documento" id="D6D07EE2-BF88-F4FD-0C49-EEBB6DBF2484">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>03CF7140-874F-DE1C-6DD7-201E58D3F60C</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="25B3C013-0B5A-AFC1-36B8-9B926808B732" referredColumn="AC927CFF-2DE6-CC6C-456C-C45D80D04D42"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="48ECEC6A-EC76-BE13-5376-F0D76CD4044E" name="Reservas_PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>1BF6D302-73D5-ED5C-7F61-F89943C3DDB9</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A3A0DD51-AB50-88EF-BFF0-B2AFB8A4F670"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E5644711-308B-711B-DBC7-268FC35C027B" name="Reservas_PlanesConsumo_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>71FAFAD0-FD26-E8D4-7D35-C880DEA61BE2</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="12F67D97-A4CD-DC82-4349-FBD89B3F3E83"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B2FE4DD0-5814-C416-58DE-3276D246851B" name="Reservas_Usuarios_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>56358386-C44E-FAAB-D347-C6109128C94F</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="627167C2-C763-EB05-ED24-CCD3B0E28561"/>
+<colUsage columnID="F056ECAA-C2B7-BC55-72A4-F73F0D4EC7C2"/>
+<colUsage columnID="7C803689-258F-24AA-60ED-7F833D98AB81"/>
+<colUsage columnID="D6D07EE2-BF88-F4FD-0C49-EEBB6DBF2484"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8BEA635D-8797-9E5E-CB3C-2547DD15CE1C" name="Usuarios">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 01:04:14 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="tipo_documento" id="E9C3442E-633C-C028-0DE4-9BE1642175F6">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 01:04:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<constraintName>CK_tipo_documento</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="CC" description=""/>
+<valueDef value="CE" description=""/>
+<valueDef value="CIF" description=""/>
+<valueDef value="TI" description=""/>
+<valueDef value="pasaporte" description=""/>
+</listOfValues>
+<defaultValue>CC</defaultValue>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="num_documento" id="EAD4E896-5C93-96FA-E249-28A3610E9F95">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 01:06:19 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="EAD53E6C-F3BC-04AF-9FC1-00D38B002584">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 01:07:59 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="correo" id="B801617C-AE96-8CE9-FC9E-4ADADA7E7EFB">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 01:10:04 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo2" id="CB3BA88E-5E39-8CB7-522A-2ECBEFF87B08">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 01:27:22 UTC</createdTime>
+<generatorID>04E64217-B4FC-01F9-3F27-C2A21322607C</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<referedAttribute>38FD1D97-9ED1-6955-DA57-F0DD70F99628</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="EC99C46B-FEE0-09B1-9077-458ABD539A57" name="Usuarios PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 01:07:23 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>EAD4E896-5C93-96FA-E249-28A3610E9F95</attributeRef>
+<attributeRef>B801617C-AE96-8CE9-FC9E-4ADADA7E7EFB</attributeRef>
+<attributeRef>EAD53E6C-F3BC-04AF-9FC1-00D38B002584</attributeRef>
+<attributeRef>E9C3442E-633C-C028-0DE4-9BE1642175F6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

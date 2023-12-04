@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Ofrece" directorySegmentName="seg_0" id="AA1D5646-E4B7-E6FE-017A-A4E91F79DE73">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 04:03:44 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>C0D13E18-3ECE-D752-B843-18CC44947BCE</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D7E7C379-0CB1-2D3F-60A6-E05147DFD8A2</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,161 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8EBC0F20-545E-ED12-47C4-74323D16702C" name="Reservas">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:42:12 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="337CC9DB-305D-472D-961F-85AC3BEAF07D">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:42:21 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_inicio" id="25B1A2EF-B8C0-4A7A-9F4A-BC335BDE8843">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:42:31 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_salida" id="EB82E17B-D811-994D-5839-27DFDE1AC166">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:42:53 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="num_personas" id="EE67BE10-B473-1916-BF84-B40DF33D3B9F">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:43:05 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>100</endValue>
+</rangeDef>
+</listOfRanges>
+</Attribute>
+<Attribute name="num_documento" id="6E4CD351-E1A6-D48D-69D4-21FD0C702681">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:43:38 UTC</createdTime>
+<generatorID>56358386-C44E-FAAB-D347-C6109128C94F</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<referedAttribute>EAD4E896-5C93-96FA-E249-28A3610E9F95</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="correo" id="360ECB1C-00AA-8517-E7CE-4C71B3ECD1A6">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:43:38 UTC</createdTime>
+<generatorID>56358386-C44E-FAAB-D347-C6109128C94F</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<referedAttribute>B801617C-AE96-8CE9-FC9E-4ADADA7E7EFB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="7AA37517-0E07-3194-1EB2-2AEA9FDD4E2B">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:47:22 UTC</createdTime>
+<generatorID>56358386-C44E-FAAB-D347-C6109128C94F</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<referedAttribute>EAD53E6C-F3BC-04AF-9FC1-00D38B002584</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="E4636BE0-1700-2FAD-E96F-5549FFA0104D">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:09:16 UTC</createdTime>
+<generatorID>71FAFAD0-FD26-E8D4-7D35-C880DEA61BE2</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<referedAttribute>A00B3458-6238-C47E-1103-016D928F79C1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo_documento" id="03CF7140-874F-DE1C-6DD7-201E58D3F60C">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:06:56 UTC</createdTime>
+<generatorID>56358386-C44E-FAAB-D347-C6109128C94F</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<referedAttribute>E9C3442E-633C-C028-0DE4-9BE1642175F6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1BF6D302-73D5-ED5C-7F61-F89943C3DDB9" name="Reservas PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:42:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>337CC9DB-305D-472D-961F-85AC3BEAF07D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

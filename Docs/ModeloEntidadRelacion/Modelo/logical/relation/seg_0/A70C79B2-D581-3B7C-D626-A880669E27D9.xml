@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PrestanGratis" directorySegmentName="seg_0" id="A70C79B2-D581-3B7C-D626-A880669E27D9">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 04:20:48 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>99DECF80-4346-CF36-3B76-2E3313DEE96C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>0E85CE6B-23A8-61A5-A08F-AF6595DF9C52</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

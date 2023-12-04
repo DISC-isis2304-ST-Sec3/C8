@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="CheckIn" directorySegmentName="seg_0" id="94D4998A-D6B7-FBF6-2950-C01C644335D9">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:52:56 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>8EBC0F20-545E-ED12-47C4-74323D16702C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>355E3C86-B0F0-EE04-9AD0-EAF285B510A7</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="fecha_ingreso" id="7A6A453A-040B-97F6-411D-6E85702484D2">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 22:00:28 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

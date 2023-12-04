@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0BB621E0-F7F9-8C38-774D-29A66808DD70" name="CheckIn">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Reservas_id" id="BE368D43-C318-08BC-2EBA-093046C74117">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1A0459FE-3113-AFC6-EA26-C89BEA5BC333" referredColumn="A3A0DD51-AB50-88EF-BFF0-B2AFB8A4F670"/>
+</associations>
+</Column>
+<Column name="InformacionClientes_num_documento" id="EC9DD02A-4BBD-F56B-38E0-4E42C174D3DD">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="666BA0BC-1BF3-3535-035C-F99A0BC3A738" referredColumn="181AE082-0502-B816-0217-6AC088F083B1"/>
+</associations>
+</Column>
+<Column name="InformacionClientes_tipo_documento" id="A7703328-52A4-E4D4-7546-A73D28E57D44">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="666BA0BC-1BF3-3535-035C-F99A0BC3A738" referredColumn="D56B1C4E-26FC-2EE2-2DDE-DFA12D9803CA"/>
+</associations>
+</Column>
+<Column name="fecha_ingreso" id="AF24F1BA-F3B6-9F99-43F0-ED79B989A288">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>7A6A453A-040B-97F6-411D-6E85702484D2</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E1A29DE0-48AB-54AF-9B8D-E70C0C702719" name="CheckIn_PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BE368D43-C318-08BC-2EBA-093046C74117"/>
+<colUsage columnID="EC9DD02A-4BBD-F56B-38E0-4E42C174D3DD"/>
+<colUsage columnID="A7703328-52A4-E4D4-7546-A73D28E57D44"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D8CBA09E-627F-F770-9668-6BE49C3FB4F7" name="CheckIn_Reservas_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>94D4998A-D6B7-FBF6-2950-C01C644335D9</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BE368D43-C318-08BC-2EBA-093046C74117"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="27A12431-A8EA-2CDA-A72B-EA33C480DD0D" name="CheckIn_InformacionClientes_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>94D4998A-D6B7-FBF6-2950-C01C644335D9</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EC9DD02A-4BBD-F56B-38E0-4E42C174D3DD"/>
+<colUsage columnID="A7703328-52A4-E4D4-7546-A73D28E57D44"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

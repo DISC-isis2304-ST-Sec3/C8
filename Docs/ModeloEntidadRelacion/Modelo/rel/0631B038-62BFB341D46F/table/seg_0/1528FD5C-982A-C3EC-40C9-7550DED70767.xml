@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1528FD5C-982A-C3EC-40C9-7550DED70767" name="CheckOuts">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:15:32 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Reservas_id" id="5E6ECB83-180B-19C3-67D5-C8194220F5C0">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:15:32 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C65A778F-A8D3-5706-DE31-0D4D14F2D40B" referredColumn="A3A0DD51-AB50-88EF-BFF0-B2AFB8A4F670"/>
+</associations>
+</Column>
+<Column name="Habitaciones_id" id="65C1A059-7AB4-B2C9-E6B3-8B5E44FFBFE2">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:15:32 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B3D40A5E-A37F-0154-443E-7AC86C38C499" referredColumn="03F4E05D-A111-B338-739A-C9EF42EBBB29"/>
+</associations>
+</Column>
+<Column name="fecha_salida" id="475A2E41-9C9C-1236-CE78-4B3D092833D3">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:15:32 UTC</createdTime>
+<generatorID>650016E8-49F9-AA6D-0D35-C073A2FEBDCD</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9E252F1B-2322-EE89-09AB-190EFB78108D" name="CheckOuts_PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:15:32 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5E6ECB83-180B-19C3-67D5-C8194220F5C0"/>
+<colUsage columnID="65C1A059-7AB4-B2C9-E6B3-8B5E44FFBFE2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="45958DB6-98D4-8750-7F22-9F47CF12FE74" name="CheckOuts_Reservas_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:15:32 UTC</createdTime>
+<generatorID>DE831962-1EEE-56F4-F747-CA3525484315</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5E6ECB83-180B-19C3-67D5-C8194220F5C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="49CB4F90-7E14-3E67-F33E-82FCC36AD9CD" name="CheckOuts_Habitaciones_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:15:32 UTC</createdTime>
+<generatorID>DE831962-1EEE-56F4-F747-CA3525484315</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="65C1A059-7AB4-B2C9-E6B3-8B5E44FFBFE2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

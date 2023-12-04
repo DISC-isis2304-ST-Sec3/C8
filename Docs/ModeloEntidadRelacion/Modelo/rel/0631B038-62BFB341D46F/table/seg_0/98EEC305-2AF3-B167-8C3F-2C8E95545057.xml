@@ -1,0 +1,146 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="98EEC305-2AF3-B167-8C3F-2C8E95545057" name="PlanesConsumo">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:09:25 UTC</createdTime>
+<generatorID>BCDD1F3B-C2C2-09C3-9FB3-0408E761E706</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="4C0159E4-1218-5E03-18D8-6E2E6C624294">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:09:25 UTC</createdTime>
+<generatorID>A00B3458-6238-C47E-1103-016D928F79C1</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="51618CD2-C3E9-6829-0065-5E5BC011CECB">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:09:25 UTC</createdTime>
+<generatorID>F33ED2D6-FE8F-4BF4-6122-87EC021A54EE</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="estadia_min" id="2EB5F5CA-17C4-1D44-6A2E-4E846DB35835">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:09:25 UTC</createdTime>
+<generatorID>95A1F746-7AF3-3204-1916-942A9112F050</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="costo" id="D5F29893-D840-0E16-F490-A8A65CD0423B">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:09:25 UTC</createdTime>
+<generatorID>4767C580-BEB6-9A27-13AE-DFCAF5DB080E</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="desc_reserva" id="DC467BFB-B82D-7D9B-B29B-B0328433F505">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:09:25 UTC</createdTime>
+<generatorID>622CEBD5-9916-D869-FFD2-E91324681750</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>1</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="desc_bar" id="DF68287F-30DF-0D0A-FD53-11462760BCEF">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:09:25 UTC</createdTime>
+<generatorID>EB1F4005-FF3B-11A6-7081-35C61EFEA9CC</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>1</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="desc_restaurante" id="5AF6E8A4-346D-30B0-0F7F-C18BF99488FF">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:09:25 UTC</createdTime>
+<generatorID>8E03E203-F809-7CF1-A457-5FF0FB07C3CF</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>1</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="desc_servicio" id="500C870F-30D8-4536-1D69-7D36DAABC4B9">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:09:25 UTC</createdTime>
+<generatorID>7B4FEB24-814D-0DB0-346E-EC70390FE062</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>1</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2F711E14-E01C-7089-A635-19C8783E8FB1" name="PlanesConsumo_PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 21:09:25 UTC</createdTime>
+<generatorID>A16C91A2-9CA4-4120-9CFF-01AEE3179012</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4C0159E4-1218-5E03-18D8-6E2E6C624294"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

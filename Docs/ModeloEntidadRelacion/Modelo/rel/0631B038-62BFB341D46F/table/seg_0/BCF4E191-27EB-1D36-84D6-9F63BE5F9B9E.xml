@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BCF4E191-27EB-1D36-84D6-9F63BE5F9B9E" name="Ofrece">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Spas_id" id="D8547BD4-8AB9-4F7E-0D5B-88763CBFCC96">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B74E1662-F725-5E36-0C9B-3F1A7A7844A3" referredColumn="EE92B46C-BE1D-7819-1FD9-F1959F50BC04"/>
+</associations>
+</Column>
+<Column name="ServiciosSpa_id" id="5CE28720-1475-523B-CAD2-896ACFDCC3A7">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="46D63267-FED6-D447-E18C-4EB3496A0F4C" referredColumn="278C28BC-D528-1531-CB55-28A60B983750"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="198D67F0-BC4E-C4D0-9D32-65BDBFE99FB0" name="Ofrece_PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D8547BD4-8AB9-4F7E-0D5B-88763CBFCC96"/>
+<colUsage columnID="5CE28720-1475-523B-CAD2-896ACFDCC3A7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="67CD4519-699C-8049-5402-36BA555BB993" name="Ofrece_Spas_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>AA1D5646-E4B7-E6FE-017A-A4E91F79DE73</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D8547BD4-8AB9-4F7E-0D5B-88763CBFCC96"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7437347B-259C-6E4E-8645-52F579689B5D" name="Ofrece_ServiciosSpa_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>AA1D5646-E4B7-E6FE-017A-A4E91F79DE73</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5CE28720-1475-523B-CAD2-896ACFDCC3A7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

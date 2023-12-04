@@ -1,0 +1,90 @@
+----Sentencias
+
+----1
+db.consumos.aggregate([
+  { $match: { "fechaConsumo": { "$gte": new Date("2022-04-12T02:16:18Z") } } },
+  { $unwind: "$servicio" },  // Descompone el array servicio
+  {
+    $group: {
+      _id: "$habitacion",
+      totalDinero: { $sum: "$servicio.precio" }
+    }
+  },
+  { $project: { _id: 0, habitacion: "$_id", totalDinero: 1 } }
+]);
+
+----2
+var fechaActual = new Date();
+var fechaInicio = new Date();
+fechaInicio.setFullYear(fechaActual.getFullYear() - 1);
+
+var reservasUltimoAnio = db.reservas.find({
+  "fechaEntrada": { "$gte": fechaInicio, "$lte": fechaActual }
+});
+
+var ocupacionPorHabitacion = {};
+
+reservasUltimoAnio.forEach(function(reserva) {
+  var fechaEntrada = reserva.fechaEntrada;
+  var fechaSalida = reserva.fechaSalida;
+
+  var diasOcupacion = Math.floor((fechaSalida - fechaEntrada) / (1000 * 60 * 60 * 24));
+
+  if (!ocupacionPorHabitacion[reserva.habitacion]) {
+    ocupacionPorHabitacion[reserva.habitacion] = 0;
+  }
+
+  ocupacionPorHabitacion[reserva.habitacion] += diasOcupacion;
+});
+
+var indiceOcupacionPorHabitacion = {};
+
+for (var habitacionId in ocupacionPorHabitacion) {
+  var totalDias = ocupacionPorHabitacion[habitacionId];
+  var indiceOcupacion = (totalDias / 365) * 100;
+
+  indiceOcupacionPorHabitacion[habitacionId] = indiceOcupacion;
+}
+
+indiceOcupacionPorHabitacion;
+
+----3
+db.reservas.aggregate([
+  {
+    $match: {
+      "cliente.numDocumento": 123456789,
+      fechaEntrada: {
+        $gte: ISODate("2022-01-01T00:00:00Z"),
+        $lte: ISODate("2023-12-12T00:00:00Z")
+      }
+    }
+  },
+  {
+    $lookup: {
+      from: "consumos",
+      localField: "habitacion",
+      foreignField: "habitacion",
+      as: "consumos"
+    }
+  },
+  {
+    $unwind: "$consumos"
+  },
+  {
+    $match: {
+      "consumos.fechaConsumo": {
+        $gte: "$fechaEntrada",
+        $lte: "$fechaSalida"
+      }
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      numDocumento: "$cliente.numDocumento",
+      fechaConsumo: "$consumos.fechaConsumo",
+      tipoServicio: "$consumos.tipoServicio",
+      servicio: "$consumos.servicio"
+    }
+  }
+]);

@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EC12607E-1CDC-12D5-0D9C-B07E66368558" name="Usuarios">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>8BEA635D-8797-9E5E-CB3C-2547DD15CE1C</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="tipo_documento" id="AC927CFF-2DE6-CC6C-456C-C45D80D04D42">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>E9C3442E-633C-C028-0DE4-9BE1642175F6</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<constraintName>CK_tipo_documento</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="CC" description=""/>
+<valueDef value="CE" description=""/>
+<valueDef value="CIF" description=""/>
+<valueDef value="TI" description=""/>
+<valueDef value="pasaporte" description=""/>
+</listOfValues>
+<defaultValue>CC</defaultValue>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="num_documento" id="D684B0F4-6E2B-8477-C30E-62115138A0B5">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>EAD4E896-5C93-96FA-E249-28A3610E9F95</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="C0952387-A194-41E1-94EB-A94A22AA4EC4">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>EAD53E6C-F3BC-04AF-9FC1-00D38B002584</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="correo" id="08607250-0A70-9C1A-21C0-3B423A5E0522">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>B801617C-AE96-8CE9-FC9E-4ADADA7E7EFB</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TiposUsuario_tipo" id="88807FA2-6B5E-0D2D-C79B-73EE5CA71FEA">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>CB3BA88E-5E39-8CB7-522A-2ECBEFF87B08</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="17E2527F-5691-F1BC-0771-C89F55DC8A71" referredColumn="F9C6BCC7-0117-3293-94EE-25FA71BFFEAA"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9E81AB40-DD8C-182A-48B8-04E2720204AB" name="Usuarios_PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>EC99C46B-FEE0-09B1-9077-458ABD539A57</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D684B0F4-6E2B-8477-C30E-62115138A0B5"/>
+<colUsage columnID="08607250-0A70-9C1A-21C0-3B423A5E0522"/>
+<colUsage columnID="C0952387-A194-41E1-94EB-A94A22AA4EC4"/>
+<colUsage columnID="AC927CFF-2DE6-CC6C-456C-C45D80D04D42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F2E34AC0-73C8-4017-4C30-32B72B1347C7" name="Usuarios_TiposUsuario_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-25 03:10:06 UTC</createdTime>
+<generatorID>04E64217-B4FC-01F9-3F27-C2A21322607C</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88807FA2-6B5E-0D2D-C79B-73EE5CA71FEA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

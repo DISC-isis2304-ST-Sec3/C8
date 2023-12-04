@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C8AAD973-807C-ECB2-7437-9A9377E7BCD4" name="Presta">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ServiciosPrestamo_id" id="E7D8E129-FEF6-8BD2-F42E-15E6C2CFA4FB">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8B73B18C-2DB2-F255-764E-2E88D3E241F4" referredColumn="D5126946-88BB-34A0-7F4C-E0AD918E905D"/>
+</associations>
+</Column>
+<Column name="Utensilios_id" id="4029E929-0A62-A9CE-EC84-2A27026707A4">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="25C1C9BA-71E0-D6D8-9B38-5E8D9AF5F8F5" referredColumn="C88DBAE1-5BB8-EDEF-4BA7-1036E83FE7EA"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5BD3AF29-2CAE-3148-3281-8E5E94F64402" name="Presta_PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E7D8E129-FEF6-8BD2-F42E-15E6C2CFA4FB"/>
+<colUsage columnID="4029E929-0A62-A9CE-EC84-2A27026707A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3DA50B97-6F6C-C53A-27C0-841820E57C0E" name="Presta_ServiciosPrestamo_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>FA1DD061-F4CD-7973-576B-2B85F0B6AD39</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E7D8E129-FEF6-8BD2-F42E-15E6C2CFA4FB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7581062E-622B-3069-C438-10BDDC0289FF" name="Presta_Utensilios_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 16:47:29 UTC</createdTime>
+<generatorID>FA1DD061-F4CD-7973-576B-2B85F0B6AD39</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4029E929-0A62-A9CE-EC84-2A27026707A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

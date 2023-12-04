@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Reservan" directorySegmentName="seg_0" id="85CA7017-8924-0675-CCCE-56DB61694616">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-20 20:44:03 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0631B038-0B98-3357-7D7E-62BFB341D46F" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>787389DF-1694-5501-C200-369555E9C414</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8EBC0F20-545E-ED12-47C4-74323D16702C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="194655DE-0D9B-B000-5DE9-0793E78A3E8C" name="Consumos">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-21 15:35:34 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Habitaciones_id" id="F3746977-137F-396D-EFE5-FD0E1908CC50">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-21 15:35:34 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="23BD1C57-3D88-F0CE-3330-D23079AD6F38" referredColumn="03F4E05D-A111-B338-739A-C9EF42EBBB29"/>
+</associations>
+</Column>
+<Column name="TiposServicio_tipo" id="11198E73-0BE3-C089-087E-10D38AE7F889">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-21 15:35:34 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F11BB4FE-51EC-2486-4BD5-4A07D7FE21F9" referredColumn="56212C40-C77F-DF72-CD68-35418810E2A7"/>
+</associations>
+</Column>
+<Column name="descripcion" id="1643659F-22F9-94F6-85C0-95AF46E3C680">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-21 15:35:34 UTC</createdTime>
+<generatorID>C698A1B7-3AC4-6922-A9B6-B77406F700E7</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>510</dataTypeSize>
+<defaultValue>&quot;&quot;</defaultValue>
+<ownDataTypeParameters>510,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+</Column>
+<Column name="costo" id="17DAF0CD-4B9B-0FF5-516F-9563A3E43A5A">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-21 15:35:34 UTC</createdTime>
+<generatorID>51357227-EB94-2464-BB74-969519CC0532</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="72A9647A-FAF6-46F9-984A-A930447100C4" name="Consumos_PK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-21 15:35:34 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F3746977-137F-396D-EFE5-FD0E1908CC50"/>
+<colUsage columnID="11198E73-0BE3-C089-087E-10D38AE7F889"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="18371C32-7031-FD78-69BE-3DF2594774A2" name="Consumos_Habitaciones_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-21 15:35:34 UTC</createdTime>
+<generatorID>C2F91F47-615F-D66D-6B55-5CC86533CA3C</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F3746977-137F-396D-EFE5-FD0E1908CC50"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DDDFE66A-D256-67FE-ACAD-724102ED988F" name="Consumos_TiposServicio_FK">
+<createdBy>CAMILO</createdBy>
+<createdTime>2023-09-21 15:35:34 UTC</createdTime>
+<generatorID>C2F91F47-615F-D66D-6B55-5CC86533CA3C</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="11198E73-0BE3-C089-087E-10D38AE7F889"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
