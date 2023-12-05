@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form </title>
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Form </h1>
+
+    <!-- Formulario de creación de TipoBebida -->
+    <form action="/rfc3" method="get">
+        <label for="numDocumento">Número de Documento:</label><br>
+        <input type="text" id="numDocumento" name="numDocumento"><br>
+        <label for="startDate">Fecha de Inicio (YYYY-MM-DD):</label><br>
+        <input type="text" id="startDate" name="startDate"><br>
+        <label for="endDate">Fecha de Fin (YYYY-MM-DD):</label><br>
+        <input type="text" id="endDate" name="endDate"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+</form>
+
+</div>
+
+</body>
+</html>

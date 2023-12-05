@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RFC2</title>
+    <title>RFC1</title>
     <link rel="stylesheet" href="/webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
 </head>
 <body>
@@ -12,25 +13,26 @@
     <div th:replace="navbar :: navbar"></div>
 
     <div class="container mt-3">
-        <h1>RFC2</h1>
+        <h1>RFC1</h1>
         
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Habitacion</th>
-                    <th>Índice de Ocupación</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="ocupacion: ${rfc2}">
-                    <td th:text="${ocupacion.key}"></td>
-                    <td th:text="${ocupacion.value}"></td>
-                </tr>
-            </tbody>
+        <table>
+            <tr>
+                <th>Número de Documento</th>
+                <th>Fecha de Consumo</th>
+                <th>Tipo de Servicio</th>
+                <th>Servicio</th>
+            </tr>
+            <tr th:each="reserva : ${reservas}">
+                <td th:text="${reserva.numDocumento}"></td>
+                <td th:text="${reserva.fechaConsumo}"></td>
+                <td th:text="${reserva.tipoServicio}"></td>
+                <td th:text="${reserva.servicio}"></td>
+            </tr>
         </table>
     
          <!-- Botón para redirigir al formulario de creación de cliente -->
     </div>
+
 
 <script src="/webjars/bootstrap/4.5.3/js/bootstrap.min.js"></script>
 </body>

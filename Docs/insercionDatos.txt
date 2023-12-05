@@ -1,0 +1,384 @@
+----Datos
+---inserción tiposHabitacion
+db.tiposHabitacion.insertMany([{
+    "tipo": "suite", 
+    "jacuzzi": true,
+    "comedor": true,
+    "cocina": true},
+    {
+    "tipo": "familiar", 
+    "jacuzzi": true,
+    "comedor": true,
+    "cocina": false},
+    {
+    "tipo": "doble", 
+    "jacuzzi": true,
+    "comedor": false,
+    "cocina": false
+    }	
+]);
+---inserción habitaciones
+
+db.habitaciones.insertMany([{
+  "numero": 1,
+  "capacidad": 4,
+  "costo": 700000,
+  "tipoHabitacion": {
+    "tipo": "suite", 
+    "jacuzzi": true,
+    "comedor": true,
+    "cocina": true
+  }
+},
+{
+"numero": 2,
+  "capacidad": 5,
+  "costo": 400000,
+  "tipoHabitacion": {
+    "tipo": "familiar", 
+    "jacuzzi": true,
+    "comedor": true,
+    "cocina": false
+  }
+},
+{
+"numero": 3,
+  "capacidad": 2,
+  "costo": 250000,
+  "tipoHabitacion":{
+    "tipo": "doble", 
+    "jacuzzi": true,
+    "comedor": false,
+    "cocina": false
+    }
+},
+{
+"numero": 4,
+  "capacidad": 2,
+  "costo": 1000000,
+   "tipoHabitacion": {
+    "tipo": "suite", 
+    "jacuzzi": true,
+    "comedor": true,
+    "cocina": true
+  }},
+{
+"numero": 5,
+  "capacidad": 3,
+  "costo": 750000,
+   "tipoHabitacion": {
+    "tipo": "suite", 
+    "jacuzzi": true,
+    "comedor": true,
+    "cocina": true
+  }},
+{
+"numero": 6,
+  "capacidad": 4,
+  "costo": 500000,
+   "tipoHabitacion": {
+    "tipo": "familiar", 
+    "jacuzzi": true,
+    "comedor": true,
+    "cocina": false
+  }
+},
+{
+"numero": 7,
+  "capacidad": 3,
+  "costo": 700000,
+   "tipoHabitacion": {
+    "tipo": "suite", 
+    "jacuzzi": true,
+    "comedor": true,
+    "cocina": true
+  }},
+{
+"numero": 8,
+  "capacidad": 2,
+  "costo": 500000,
+   "tipoHabitacion": {
+    "tipo": "familiar", 
+    "jacuzzi": true,
+    "comedor": true,
+    "cocina": false
+  }
+},
+{
+"numero": 9,
+  "capacidad": 2,
+  "costo": 50,
+   "tipoHabitacion": {
+    "tipo": "suite", 
+    "jacuzzi": true,
+    "comedor": true,
+    "cocina": true
+  }
+},
+{
+"numero": 10,
+  "capacidad": 2,
+  "costo": 7000000,
+   "tipoHabitacion":{
+    "tipo": "doble", 
+    "jacuzzi": true,
+    "comedor": false,
+    "cocina": false
+    }
+},
+{
+"numero": 11,
+  "capacidad": 2,
+  "costo": 50000,
+  "tipoHabitacion":{
+    "tipo": "doble", 
+    "jacuzzi": true,
+    "comedor": false,
+    "cocina": false
+    }
+
+}]);
+
+-----Inserción reservas
+db.reservas.insertMany([{
+  "fechaEntrada": ISODate("2023-01-01T00:00:00Z"),
+  "fechaSalida": ISODate("2023-01-03T00:00:00Z"),
+  "numeroPersonas": 2,
+  "habitacion": ObjectId("656a65b6f9d812a017ff04fa"),
+  "cliente": {
+    "tipoDocumento": "CC",
+    "numDocumento": 123456789,
+    "nombre": "Eduardo Rojas",
+    "correo": "e.rojas@example.com"
+  }},
+  {
+  "fechaEntrada": ISODate("2023-01-01T00:00:00Z"),
+  "fechaSalida": ISODate("2023-01-03T00:00:00Z"),
+  "numeroPersonas": 4,
+  "habitacion": ObjectId("656a65b6f9d812a017ff04fb"),
+  "cliente": {
+    "tipoDocumento": "CC",
+    "numDocumento": 234567890,
+    "nombre": "Sandra Sanchez",
+    "correo": "s.sanchez@example.com"
+  }}]);
+
+----- Inserción clientes
+db.clientes.insertMany([{
+    "tipoDocumento": "CC",
+    "numDocumento": 123456789,
+    "nombre": "Eduardo Rojas",
+    "correo": "e.rojas@example.com"},
+    {
+    "tipoDocumento": "CC",
+    "numDocumento": 234567890,
+    "nombre": "Sandra Sanchez",
+    "correo": "s.sanchez@example.com"
+    }]);
+----- Inserción consumos
+db.consumos.insertMany([{
+    "habitacion": ObjectId("656a65b6f9d812a017ff04fa"),
+    "tipoServicio": "spa",
+    "descripcion": "consumo",	
+    "costo": 750000,	
+    "fechaConsumo": ISODate("2023-01-01T00:00:00Z")},
+    {
+    "habitacion": ObjectId("656a65b6f9d812a017ff04fa"),
+    "tipoServicio": "spa",
+    "descripcion": "consumoPrueba",	
+    "costo": 1500000,
+    "fechaConsumo": ISODate("2023-01-02T00:00:00Z")},
+    {
+    "habitacion": ObjectId("656a65b6f9d812a017ff04fa"),
+    "tipoServicio": "spa",
+    "descripcion": "prueba",	
+    "costo": 250000,
+    "fechaConsumo": ISODate("2023-01-03T00:00:00Z")}
+    ]);
+----insercion planesConsumo
+db.planesConsumo.insertMany([{
+    "nombre": 'Estandar',
+    "estadiaMinima": 2,
+    "costo": 35000,	
+    "descuentoReserva": 0,	
+    "descuentoBar": 0,	
+    "descuentoRestaurante": 0,	
+    "descuentoServicio": 0},	
+    {
+    "nombre": 'Larga estadia',
+    "estadiaMinima": 7,
+    "costo": 1500000,	
+    "descuentoReserva": 20,	
+    "descuentoBar": 0,	
+    "descuentoRestaurante": 0,	
+    "descuentoServicio": 0},
+    {
+    "nombre": 'Tiempo compartido',
+    "estadiaMinima": 5,
+    "costo": 2000000,	
+    "descuentoReserva": 20,	
+    "descuentoBar": 20,	
+    "descuentoRestaurante": 20,	
+    "descuentoServicio": 0},
+    {
+    "nombre": 'Todo incluido',
+    "estadiaMinima": 2,
+    "costo": 3000000,	
+    "descuentoReserva": 0,	
+    "descuentoBar": 100,	
+    "descuentoRestaurante": 100,	
+    "descuentoServicio": 0},
+    {
+    "nombre": 'Full',
+    "estadiaMinima": 1,
+    "costo": 5000000,	
+    "descuentoReserva": 100,	
+    "descuentoBar": 100,	
+    "descuentoRestaurante": 100,	
+    "descuentoServicio": 100}
+    ]);
+
+---inserción productos y servicios
+
+
+
+
+db.servicios.insertMany([
+    {
+    "nombre": 'sp Masaje',
+    "precio": 150000},	
+    {
+    "nombre": 'sp Exfoliacion',
+    "precio": 60000},
+    {
+    "nombre": 'sp Terapia',
+    "precio": 50000},
+    {
+    "nombre": 'sp Uñas',
+    "precio": 150000},
+    {
+    "nombre": 'lv Lavar camisa',
+    "precio": 10000},	
+    {
+    "nombre": 'lv Lavar pantalon',
+    "precio": 12000},
+    {
+    "nombre": 'lv Lavar chaqueta',
+    "precio": 15000},
+    {
+    "nombre": 'lv Lavar cobijas',
+    "precio": 35000},
+    {
+    "nombre": 'Ti Camiseta',
+    "precio": 52000},	
+    {
+    "nombre": 'Ti Gafas',
+    "precio": 80000},
+    {
+    "nombre": 'Ti Gorra',
+    "precio": 25000},
+    {
+    "nombre": 'su Coca-Cola',
+    "precio": 6000},	
+    {
+    "nombre": 'su Papas',
+    "precio": 5000},
+    {
+    "nombre": 'su Cliclets',
+    "precio": 1000},
+    {
+    "nombre": 'su Chocoramo',
+    "precio": 3000},
+    {
+    "nombre": 're Pollo',
+    "precio": 20500},	
+    {
+    "nombre": 're Hamburguesa',
+    "precio": 20800},
+    {
+    "nombre": 're Sufle',
+    "precio": 250000},
+    {
+    "nombre": 're Pizza',
+    "precio": 30000},
+    {
+    "nombre": 'ba Margarita',
+    "precio": 20500},	
+    {
+    "nombre": 'ba Aguardiente amarillo',
+    "precio": 70000},
+    {
+    "nombre": 'ba Tequila',
+    "precio": 150000},
+    {
+    "nombre": 'ba Vino',
+    "precio": 30000}
+    ]);
+
+-----Insercion tipo servicio: 
+db.tiposServicio.insertMany([
+    {
+    "tipo": 'spa',
+    "descripcion": 'spa del hotel'
+    },	
+    {
+    "tipo": 'bar',
+    "descripcion": 'bar del hotel'
+    },
+    {
+    "tipo": 'restaurante',
+    "descripcion": 'restaurante principal'
+    },
+   {
+    "tipo": 'super',
+    "descripcion": 'super mercado x'
+    },
+    {
+    "tipo": 'tienda',
+    "descripcion": 'GreenShop'
+    },
+    {
+    "tipo": 'lavanderia',
+    "descripcion": 'lavanderia del hotel'
+    }
+    ]);
+
+
+db.consumos.insertMany([{
+    "habitacion": ObjectId("656a65b6f9d812a017ff04fa"),
+    "fechaConsumo": ISODate("2022-01-02T02:16:18Z"),  // Agrega una coma aquí
+    "tipoServicio": {
+        "tipo": 'spa',
+        "descripcion": 'spa del hotel'
+    },
+    "servicio": {
+        "nombre": 'ba Aguardiente amarillo',
+        "precio": 70000
+    }
+},
+{
+    "habitacion": ObjectId("656a65b6f9d812a017ff04fa"),
+    "fechaConsumo": ISODate("2022-01-02T02:16:18Z"),  // Agrega una coma aquí
+    "tipoServicio": {
+        "tipo": 'spa',
+        "descripcion": 'spa del hotel'
+    },
+    "servicio": {
+        "nombre": 'ba Aguardiente amarillo',
+        "precio": 70000
+    }
+},
+{
+    "habitacion": ObjectId("656a65b6f9d812a017ff04fa"),
+    "fechaConsumo": ISODate("2022-01-03T02:16:18Z"),  // Agrega una coma aquí
+    "tipoServicio": {
+        "tipo": 'spa',
+        "descripcion": 'spa del hotel'
+    },
+    "servicio": {
+        "nombre": 'ba Aguardiente amarillo',
+        "precio": 70000
+    }
+}
+])
+

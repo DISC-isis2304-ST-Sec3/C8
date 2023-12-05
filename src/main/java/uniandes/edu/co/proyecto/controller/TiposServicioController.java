@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import uniandes.edu.co.proyecto.modelo.BebidaEmbedded;
-import uniandes.edu.co.proyecto.modelo.BebidaTipos;
 import uniandes.edu.co.proyecto.modelo.Servicio;
 import uniandes.edu.co.proyecto.modelo.ServicioEmbedded;
 import uniandes.edu.co.proyecto.modelo.TipoServicio;
@@ -66,7 +64,6 @@ public class TiposServicioController {
         {
             tipoServicioRepository.delete(ser);
         }
-
         return "redirect:/tiposServicio";
         
     }

@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
 import org.springframework.data.mongodb.core.aggregation.AggregationResults;
 import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +15,7 @@ import org.springframework.ui.Model;
 
 import java.util.*;
 
-@RestController
+@Controller
 public class RFC2Controller {
 
     @Autowired
@@ -44,10 +45,12 @@ public class RFC2Controller {
     }
 
     Map<String, Double> indiceOcupacionPorHabitacion = new HashMap<>();
-    for (Map.Entry<String, Double> entry : ocupacionPorHabitacion.entrySet()) {
-        double indiceOcupacion = (entry.getValue() / 365) * 100;
-        indiceOcupacionPorHabitacion.put(entry.getKey(), indiceOcupacion);
-    }
+for (Map.Entry<String, Double> entry : ocupacionPorHabitacion.entrySet()) {
+    String habitacion = entry.getKey();
+    double diasOcupacion = entry.getValue();
+    double indiceOcupacion = (diasOcupacion / 365) * 100;
+    indiceOcupacionPorHabitacion.put(habitacion, indiceOcupacion);
+}
 
     model.addAttribute("rfc2", indiceOcupacionPorHabitacion);
     return "rfc2";

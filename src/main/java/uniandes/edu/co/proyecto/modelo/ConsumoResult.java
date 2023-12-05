@@ -3,15 +3,15 @@ package uniandes.edu.co.proyecto.modelo;
 import org.bson.types.ObjectId;
 
 public class ConsumoResult {
-    private ObjectId habitacion;
+    private String habitacion;
     private Double totalDinero;
 
     // Getters and setters
-    public ObjectId getHabitacion() {
+    public String getHabitacion() {
         return habitacion;
     }
 
-    public void setHabitacion(ObjectId habitacion) {
+    public void setHabitacion(String habitacion) {
         this.habitacion = habitacion;
     }
 
